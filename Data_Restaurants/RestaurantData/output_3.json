@@ -1,0 +1,164 @@
+[
+    {
+        "id": "zyS0TeBajyPbXCb1zIk1cw",
+        "name": "Yatai",
+        "categories": [
+            "Sushi Bars",
+            "Bubble Tea",
+            "Ramen"
+        ],
+        "price_range": "",
+        "rating": 4.3,
+        "review_count": 12,
+        "address": "",
+        "phone": "(217) 607-1199",
+        "website": "http://www.yatai-restaurant.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/yatai-champaign"
+    },
+    {
+        "id": "m6nLTIrEJHtHSYJjVavnzw",
+        "name": "Kohinoor Indian Restaurant and Lounge",
+        "categories": [
+            "Indian",
+            "Bars"
+        ],
+        "price_range": "$$",
+        "rating": 4.4,
+        "review_count": 278,
+        "address": "",
+        "phone": "(217) 552-1384",
+        "website": "http://www.kohinoorchampaign.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/kohinoor-indian-restaurant-and-lounge-champaign"
+    },
+    {
+        "id": "UWlnvLbF8CUWRugRKu3ivg",
+        "name": "Dee-Dee’s Beef",
+        "categories": [
+            "Sicilian",
+            "Sandwiches"
+        ],
+        "price_range": "",
+        "rating": 5.0,
+        "review_count": 5,
+        "address": "",
+        "phone": "(217) 621-7441",
+        "website": "https://www.deedeesbeef.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/dee-dee-s-beef-champaign"
+    },
+    {
+        "id": "8VRiB8ChR6RpS0f1Ox7epw",
+        "name": "Shawarma Joint",
+        "categories": [
+            "Mediterranean",
+            "Wraps"
+        ],
+        "price_range": "",
+        "rating": 4.4,
+        "review_count": 79,
+        "address": "",
+        "phone": "(217) 552-1320",
+        "website": "https://www.shawarmajoints.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/shawarma-joint-champaign-3"
+    },
+    {
+        "id": "qeJnMI5RmyJ2TZvkqvjn6Q",
+        "name": "Biaggi’s Ristorante Italiano",
+        "categories": [
+            "Italian"
+        ],
+        "price_range": "$$",
+        "rating": 3.6,
+        "review_count": 307,
+        "address": "",
+        "phone": "(217) 356-4300",
+        "website": "http://www.biaggis.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/biaggis-ristorante-italiano-champaign-2"
+    },
+    {
+        "id": "aNnt4FSy4OXoUBjIXJwwTQ",
+        "name": "Ten Second Rice Noodle",
+        "categories": [
+            "Noodles"
+        ],
+        "price_range": "",
+        "rating": 5.0,
+        "review_count": 2,
+        "address": "",
+        "phone": "(217) 607-1848",
+        "website": "https://www.tensecondsricenoodle1848.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/ten-second-rice-noodle-champaign"
+    },
+    {
+        "id": "1fohrgQz-rJ-gI3iRwQpEA",
+        "name": "Dubai Grill",
+        "categories": [
+            "Middle Eastern",
+            "Kebab",
+            "Sandwiches"
+        ],
+        "price_range": "",
+        "rating": 4.6,
+        "review_count": 43,
+        "address": "",
+        "phone": "(217) 552-1276",
+        "website": "https://www.dubai-grill.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/dubai-grill-urbana-2"
+    },
+    {
+        "id": "Zy-UWnHJkb0ZOuN7RrUDnQ",
+        "name": "Dave’s Hot Chicken",
+        "categories": [
+            "Chicken Shop",
+            "Halal"
+        ],
+        "price_range": "",
+        "rating": 4.1,
+        "review_count": 19,
+        "address": "",
+        "phone": "(217) 689-1940",
+        "website": "https://restaurants.daveshotchicken.com/il/champaign/best-hot-chicken-sandwich-in-champaign/",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/daves-hot-chicken-champaign"
+    },
+    {
+        "id": "a39B-BfbCipNkNH7vwCfug",
+        "name": "Mid-Summer Lounge",
+        "categories": [
+            "Chinese",
+            "Asian Fusion",
+            "Noodles"
+        ],
+        "price_range": "$$",
+        "rating": 4.2,
+        "review_count": 119,
+        "address": "",
+        "phone": "(217) 607-1434",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/mid-summer-lounge-champaign"
+    },
+    {
+        "id": "xWmR9ILd2SZhoUrVkkhuZw",
+        "name": "Eat Fine Design By Khun Kung",
+        "categories": [
+            "Caterers",
+            "Thai",
+            "Food Delivery Services"
+        ],
+        "price_range": "",
+        "rating": 5.0,
+        "review_count": 9,
+        "address": "",
+        "phone": "(844) 480-1048",
+        "website": "https://www.eatfinebkk.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/eat-fine-design-by-khun-kung-champaign"
+    }
+]

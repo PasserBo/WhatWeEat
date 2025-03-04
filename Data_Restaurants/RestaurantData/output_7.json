@@ -1,0 +1,161 @@
+[
+    {
+        "id": "M-n8Chpe5EBHgIY8uIRgQg",
+        "name": "Lanxang Thai-Lao Cuisine",
+        "categories": [
+            "Thai",
+            "Laotian"
+        ],
+        "price_range": "",
+        "rating": 4.2,
+        "review_count": 22,
+        "address": "",
+        "phone": "(217) 600-7162",
+        "website": "http://www.lanxangthailaocuisine.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/lanxang-thai-lao-cuisine-champaign"
+    },
+    {
+        "id": "xistlMeIIjG21z2SaWvfVQ",
+        "name": "Kung Fu BBQ",
+        "categories": [
+            "Barbeque",
+            "Shanghainese",
+            "Hot Pot"
+        ],
+        "price_range": "$$",
+        "rating": 3.4,
+        "review_count": 68,
+        "address": "",
+        "phone": "(217) 355-1888",
+        "website": "http://www.kungfuhotpot.us",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/kung-fu-bbq-champaign"
+    },
+    {
+        "id": "r0B-DJAA_XX2Dq_cwbPcaQ",
+        "name": "Sakura Japanese Restaurant",
+        "categories": [
+            "Japanese"
+        ],
+        "price_range": "$$",
+        "rating": 3.9,
+        "review_count": 23,
+        "address": "",
+        "phone": "",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/sakura-japanese-restaurant-urbana"
+    },
+    {
+        "id": "dz16HL8ON9n2InWIt49R8g",
+        "name": "Tres Nopales",
+        "categories": [
+            "Mexican"
+        ],
+        "price_range": "",
+        "rating": 4.7,
+        "review_count": 25,
+        "address": "",
+        "phone": "(217) 954-1211",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/tres-nopales-urbana"
+    },
+    {
+        "id": "jpDeo3dENsMvFRmyq1YAmw",
+        "name": "Encanto Restaurant & Bar",
+        "categories": [
+            "Mexican",
+            "Peruvian",
+            "Burgers"
+        ],
+        "price_range": "",
+        "rating": 4.3,
+        "review_count": 24,
+        "address": "",
+        "phone": "(217) 607-1120",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/encanto-restaurant-and-bar-urbana"
+    },
+    {
+        "id": "9scRPldniHdbTMUEtaQm-g",
+        "name": "Niro’s Gyros",
+        "categories": [
+            "Greek"
+        ],
+        "price_range": "",
+        "rating": 4.2,
+        "review_count": 17,
+        "address": "",
+        "phone": "(217) 693-7969",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/niros-gyros-champaign-8"
+    },
+    {
+        "id": "hqD305gYrnETCBWZ2n1f2w",
+        "name": "Atomic Wings Champaign",
+        "categories": [
+            "Chicken Wings",
+            "Sandwiches",
+            "Halal"
+        ],
+        "price_range": "",
+        "rating": 2.9,
+        "review_count": 7,
+        "address": "",
+        "phone": "(217) 661-7155",
+        "website": "https://www.atomicwings.com/locations/champaign-il",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/atomic-wings-champaign-champaign"
+    },
+    {
+        "id": "EeQzKUZRSYQc6IPZQpqufA",
+        "name": "The Space",
+        "categories": [
+            "New American",
+            "Seafood",
+            "Beer Bar"
+        ],
+        "price_range": "",
+        "rating": 4.1,
+        "review_count": 21,
+        "address": "",
+        "phone": "(815) 575-9514",
+        "website": "http://thespacecu.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/the-space-champaign"
+    },
+    {
+        "id": "kKiVfbWLVaAzVHnXHO77eA",
+        "name": "Mama’s African Kitchen",
+        "categories": [
+            "African"
+        ],
+        "price_range": "",
+        "rating": 3.7,
+        "review_count": 7,
+        "address": "",
+        "phone": "(217) 693-2081",
+        "website": "http://www.bestofafricafs.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/mamas-african-kitchen-urbana-3"
+    },
+    {
+        "id": "ucgIGCubSaCaPpMpW1qqMg",
+        "name": "Oozu Ramen Bar",
+        "categories": [
+            "Ramen"
+        ],
+        "price_range": "$$",
+        "rating": 3.8,
+        "review_count": 53,
+        "address": "",
+        "phone": "(217) 552-1081",
+        "website": "https://oozuramen.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/oozu-ramen-bar-champaign"
+    }
+]

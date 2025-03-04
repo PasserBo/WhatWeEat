@@ -1,0 +1,169 @@
+[
+    {
+        "id": "vv_FFphOOrZzzyML4raIKw",
+        "name": "Aspen Tap House",
+        "categories": [
+            "Burgers",
+            "Chicken Wings",
+            "Comfort Food"
+        ],
+        "price_range": "$$",
+        "rating": 3.9,
+        "review_count": 116,
+        "address": "",
+        "phone": "(217) 530-4394",
+        "website": "https://aspentaphouse.com/champaign-il/",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/aspen-tap-house-champaign"
+    },
+    {
+        "id": "SvxSoyZn0WW0c7bFLIYfMA",
+        "name": "Baxter’s American Grille",
+        "categories": [
+            "American",
+            "Steakhouses",
+            "Bars"
+        ],
+        "price_range": "$$",
+        "rating": 4.1,
+        "review_count": 162,
+        "address": "",
+        "phone": "(217) 239-9299",
+        "website": "http://www.baxtersgrille.com/home",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/baxters-american-grille-champaign"
+    },
+    {
+        "id": "zEhziLL9XUex0uFr-F8oOQ",
+        "name": "Tenkyu",
+        "categories": [
+            "Asian Fusion",
+            "Izakaya",
+            "Ramen"
+        ],
+        "price_range": "",
+        "rating": 3.8,
+        "review_count": 32,
+        "address": "",
+        "phone": "(217) 552-1133",
+        "website": "http://tenkyu.cafe",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/tenkyu-champaign"
+    },
+    {
+        "id": "J2mmkwPiTQg3aCXP3afiJQ",
+        "name": "Sticky Rice",
+        "categories": [
+            "Laotian",
+            "Thai",
+            "Noodles"
+        ],
+        "price_range": "$$",
+        "rating": 4.3,
+        "review_count": 163,
+        "address": "",
+        "phone": "(217) 954-1929",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/sticky-rice-champaign"
+    },
+    {
+        "id": "PBmfdx-tC2D54FI3HtcKww",
+        "name": "The Ribeye",
+        "categories": [
+            "Steakhouses",
+            "Salad"
+        ],
+        "price_range": "$$",
+        "rating": 3.7,
+        "review_count": 155,
+        "address": "",
+        "phone": "(217) 859-7201",
+        "website": "https://www.theribeyerestaurant.org",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/the-ribeye-champaign"
+    },
+    {
+        "id": "JlQvuuTL6SidU04_LKOVDg",
+        "name": "Dim Sum House",
+        "categories": [
+            "Dim Sum"
+        ],
+        "price_range": "",
+        "rating": 4.8,
+        "review_count": 9,
+        "address": "",
+        "phone": "(217) 607-1074",
+        "website": "https://www.dimsumhouseuiuc.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/dim-sum-house-champaign"
+    },
+    {
+        "id": "dn9lwYUxmhs_mLKPu7L25Q",
+        "name": "Big Grove Tavern",
+        "categories": [
+            "New American",
+            "Cocktail Bars",
+            "Venues & Event Spaces"
+        ],
+        "price_range": "$$",
+        "rating": 3.4,
+        "review_count": 526,
+        "address": "",
+        "phone": "(217) 239-3505",
+        "website": "http://www.biggrovetavern.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/big-grove-tavern-champaign"
+    },
+    {
+        "id": "1kt_8Ac61r200wzIgHxHog",
+        "name": "Kajiken",
+        "categories": [
+            "Ramen",
+            "Desserts",
+            "Salad"
+        ],
+        "price_range": "",
+        "rating": 4.5,
+        "review_count": 4,
+        "address": "",
+        "phone": "(217) 628-6683",
+        "website": "https://www.kajikenus.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/kajiken-champaign-2"
+    },
+    {
+        "id": "hP2DOm7E2H4P7MOS7XN_SQ",
+        "name": "Hamilton Walker’s",
+        "categories": [
+            "Seafood",
+            "Steakhouses",
+            "Bars"
+        ],
+        "price_range": "$$$",
+        "rating": 3.6,
+        "review_count": 264,
+        "address": "",
+        "phone": "(217) 350-0363",
+        "website": "https://www.hamiltonwalkers.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/hamilton-walkers-champaign"
+    },
+    {
+        "id": "-7FjB1OPvJem1mh6lAnJUA",
+        "name": "Northern Cuisine",
+        "categories": [
+            "Dim Sum",
+            "Seafood",
+            "Soup"
+        ],
+        "price_range": "",
+        "rating": 4.5,
+        "review_count": 10,
+        "address": "",
+        "phone": "(217) 607-1299",
+        "website": "https://www.northerncuisineusa.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/northern-cuisine-champaign"
+    }
+]

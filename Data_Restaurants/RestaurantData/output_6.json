@@ -1,0 +1,162 @@
+[
+    {
+        "id": "-yZ78Hd2DKDqvxJKbCyELg",
+        "name": "Stango Cuisine",
+        "categories": [
+            "African",
+            "Caribbean",
+            "New American"
+        ],
+        "price_range": "$",
+        "rating": 4.7,
+        "review_count": 55,
+        "address": "",
+        "phone": "(217) 369-3566",
+        "website": "http://www.StangoCU.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/stango-cuisine-champaign"
+    },
+    {
+        "id": "iYOy1KBYgVClwIz4KioeOA",
+        "name": "Zhang Liang Malatang",
+        "categories": [
+            "Chinese"
+        ],
+        "price_range": "",
+        "rating": 4.0,
+        "review_count": 2,
+        "address": "",
+        "phone": "(217) 778-9888",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/zhang-liang-malatang-champaign"
+    },
+    {
+        "id": "CrIWqmuO2uQWwl3z11K_BA",
+        "name": "Pizzeria Antica",
+        "categories": [
+            "Pizza",
+            "Italian"
+        ],
+        "price_range": "$$",
+        "rating": 3.8,
+        "review_count": 200,
+        "address": "",
+        "phone": "(217) 530-4137",
+        "website": "https://anticachampaign.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/pizzeria-antica-champaign"
+    },
+    {
+        "id": "dtKy808TwAgtOcwSCbXFJw",
+        "name": "Jipbap Taste of Korea",
+        "categories": [
+            "Korean"
+        ],
+        "price_range": "$",
+        "rating": 3.9,
+        "review_count": 108,
+        "address": "",
+        "phone": "(217) 552-1688",
+        "website": "https://www.jipbapcu.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/jipbap-taste-of-korea-champaign"
+    },
+    {
+        "id": "avyN1FdXcxQfrM8Mqz7WGA",
+        "name": "ISHI sushi & Kaori’s Oven",
+        "categories": [
+            "Sushi Bars"
+        ],
+        "price_range": "",
+        "rating": 5.0,
+        "review_count": 20,
+        "address": "",
+        "phone": "(217) 254-5653",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/ishi-sushi-and-kaori-s-oven-champaign"
+    },
+    {
+        "id": "tqxS-gA5zhBvdI5lk7kDGg",
+        "name": "Maize at the Station",
+        "categories": [
+            "Mexican"
+        ],
+        "price_range": "$",
+        "rating": 3.7,
+        "review_count": 133,
+        "address": "",
+        "phone": "(217) 355-3611",
+        "website": "http://maizemexicangrill.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/maize-at-the-station-champaign-3"
+    },
+    {
+        "id": "Ah4i15g8Ow_zphzcpulTxQ",
+        "name": "The Bread Company",
+        "categories": [
+            "Bakeries",
+            "Sandwiches",
+            "Modern European"
+        ],
+        "price_range": "$$",
+        "rating": 3.9,
+        "review_count": 233,
+        "address": "",
+        "phone": "(217) 383-1007",
+        "website": "http://www.thebread.co",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/the-bread-company-urbana"
+    },
+    {
+        "id": "hvPPw19VdGRsOEkxgyD7tg",
+        "name": "Thara Thai",
+        "categories": [
+            "Thai",
+            "Salad",
+            "Noodles"
+        ],
+        "price_range": "$$",
+        "rating": 4.1,
+        "review_count": 281,
+        "address": "",
+        "phone": "(217) 378-1986",
+        "website": "http://tharathairestaurant.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/thara-thai-champaign"
+    },
+    {
+        "id": "-A4suUjxa7gNaiUMDjO42g",
+        "name": "Farmhouse Restaurant At Harvest Market",
+        "categories": [
+            "American",
+            "Delis",
+            "Breakfast & Brunch"
+        ],
+        "price_range": "$$$",
+        "rating": 2.5,
+        "review_count": 23,
+        "address": "",
+        "phone": "(217) 355-7878",
+        "website": "http://www.goHarvestMarket.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/farmhouse-restaurant-at-harvest-market-champaign"
+    },
+    {
+        "id": "FZFGv8vlqkZiejzUtSn76g",
+        "name": "Star BBQ",
+        "categories": [
+            "Korean",
+            "Barbeque"
+        ],
+        "price_range": "",
+        "rating": 4.0,
+        "review_count": 46,
+        "address": "",
+        "phone": "(217) 356-7777",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/star-bbq-savoy"
+    }
+]

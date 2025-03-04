@@ -1,0 +1,161 @@
+[
+    {
+        "id": "NEVA0IYbawceL6kz5v5DAw",
+        "name": "Ko Fusion",
+        "categories": [
+            "Asian Fusion",
+            "Sushi Bars"
+        ],
+        "price_range": "$$",
+        "rating": 3.3,
+        "review_count": 411,
+        "address": "",
+        "phone": "(217) 531-1166",
+        "website": "https://www.kofusion.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/ko-fusion-champaign-2"
+    },
+    {
+        "id": "gnqHyA6gY2-m9S-FKt6Xqw",
+        "name": "Cravings",
+        "categories": [
+            "Chinese",
+            "Pan Asian"
+        ],
+        "price_range": "$",
+        "rating": 4.1,
+        "review_count": 211,
+        "address": "",
+        "phone": "(217) 328-2538",
+        "website": "https://cravings2538.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/cravings-champaign-2"
+    },
+    {
+        "id": "vb7N3lNUUSdJOTFLxlMYhQ",
+        "name": "Espresso Royale",
+        "categories": [
+            "Coffee & Tea",
+            "Bakeries",
+            "Cafes"
+        ],
+        "price_range": "",
+        "rating": 1.0,
+        "review_count": 1,
+        "address": "",
+        "phone": "(217) 530-4100",
+        "website": "https://www.espressoroyalecu.com/locations/the-hub-on-daniel-street/",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/espresso-royale-champaign-8"
+    },
+    {
+        "id": "yiFcujhdkeDhmXRufMG-lw",
+        "name": "Masijta Grill",
+        "categories": [
+            "Korean"
+        ],
+        "price_range": "$$",
+        "rating": 3.6,
+        "review_count": 194,
+        "address": "",
+        "phone": "(217) 552-1188",
+        "website": "http://www.masijtagrill.com/",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/masijta-grill-urbana"
+    },
+    {
+        "id": "-imN6avaTG8FoZMUSSm5Gg",
+        "name": "83 Vietnamese Cuisine",
+        "categories": [
+            "Vietnamese"
+        ],
+        "price_range": "$$",
+        "rating": 4.8,
+        "review_count": 46,
+        "address": "",
+        "phone": "",
+        "website": "http://83viet.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/83-vietnamese-cuisine-champaign"
+    },
+    {
+        "id": "eliWVKCTRlVJYUBGki25KA",
+        "name": "Mo’s Burritos Bar And Grill",
+        "categories": [
+            "Mexican",
+            "Seafood",
+            "Cocktail Bars"
+        ],
+        "price_range": "",
+        "rating": 0.0,
+        "review_count": 0,
+        "address": "",
+        "phone": "(217) 552-5002",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/mos-burritos-bar-and-grill-champaign"
+    },
+    {
+        "id": "RucrUwlX6hvGlUOrakViYw",
+        "name": "Baldarotta’s Porketta & Sicilian Sausage",
+        "categories": [
+            "Sandwiches",
+            "Gelato",
+            "Delis"
+        ],
+        "price_range": "$$",
+        "rating": 4.5,
+        "review_count": 94,
+        "address": "",
+        "phone": "(217) 800-5726",
+        "website": "https://www.baldarottas.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/baldarottas-porketta-and-sicilian-sausage-urbana"
+    },
+    {
+        "id": "ml2qTQ3qlgrTN2W2VvdKmQ",
+        "name": "Sushi Siam",
+        "categories": [
+            "Sushi Bars"
+        ],
+        "price_range": "",
+        "rating": 4.6,
+        "review_count": 59,
+        "address": "",
+        "phone": "(217) 607-1906",
+        "website": "https://www.sushisiam.net",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/sushi-siam-champaign"
+    },
+    {
+        "id": "zswdqM8Av3KxVv9o7_6ORA",
+        "name": "Rainbow Garden Champaign",
+        "categories": [
+            "Chinese"
+        ],
+        "price_range": "$$",
+        "rating": 3.4,
+        "review_count": 123,
+        "address": "",
+        "phone": "(217) 577-2341",
+        "website": "http://www.rainbow-garden.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/rainbow-garden-champaign-champaign"
+    },
+    {
+        "id": "p2whh56_8VOKYpQi5i1VMg",
+        "name": "Pho Noodle Station",
+        "categories": [
+            "Vietnamese",
+            "Noodles"
+        ],
+        "price_range": "",
+        "rating": 3.3,
+        "review_count": 22,
+        "address": "",
+        "phone": "",
+        "website": "http://phostationchampaign.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/pho-noodle-station-champaign"
+    }
+]

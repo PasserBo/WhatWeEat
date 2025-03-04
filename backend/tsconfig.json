@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "CommonJS",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true
+    },
+    "include": ["src/**/*"],  // 添加此行，确保 TypeScript 编译 src/ 目录
+    "exclude": ["dist", "node_modules"]
+}

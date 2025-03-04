@@ -1,0 +1,166 @@
+[
+    {
+        "id": "NkEt1gDvimNXLJPz_ZhiHw",
+        "name": "Sinclaire’s Coffee",
+        "categories": [
+            "Cafes",
+            "Coffee & Tea",
+            "Bakeries"
+        ],
+        "price_range": "",
+        "rating": 4.5,
+        "review_count": 2,
+        "address": "",
+        "phone": "",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/sinclaire-s-coffee-champaign"
+    },
+    {
+        "id": "dHkbBWmXXjaO_-9BgQyEPg",
+        "name": "Moki Sushi",
+        "categories": [
+            "Sushi Bars",
+            "Japanese"
+        ],
+        "price_range": "",
+        "rating": 2.5,
+        "review_count": 142,
+        "address": "",
+        "phone": "(217) 552-1600",
+        "website": "http://mokisushichampaign.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/moki-sushi-champaign"
+    },
+    {
+        "id": "mZJdFjxvVddqPN5RZdKSHg",
+        "name": "Jurassic Grill",
+        "categories": [
+            "Burgers",
+            "American"
+        ],
+        "price_range": "$",
+        "rating": 3.7,
+        "review_count": 81,
+        "address": "",
+        "phone": "(217) 954-1871",
+        "website": "https://jurassicgrillchampaign.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/jurassic-grill-champaign"
+    },
+    {
+        "id": "xWGn7oqLOZu_00H8pZOtsQ",
+        "name": "Cracked on Green",
+        "categories": [
+            "Coffee & Tea",
+            "Breakfast & Brunch",
+            "Food Trucks"
+        ],
+        "price_range": "$",
+        "rating": 4.0,
+        "review_count": 179,
+        "address": "",
+        "phone": "(217) 954-0361",
+        "website": "http://crackedongreen.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/cracked-on-green-champaign"
+    },
+    {
+        "id": "wsuzuLD3KV7L8oMinLCI0A",
+        "name": "Merry Ann’s Diner",
+        "categories": [
+            "Diners",
+            "Breakfast & Brunch",
+            "American"
+        ],
+        "price_range": "$",
+        "rating": 3.4,
+        "review_count": 129,
+        "address": "",
+        "phone": "(217) 352-5399",
+        "website": "http://www.merryannsdiner.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/merry-anns-diner-champaign"
+    },
+    {
+        "id": "Tiu3iRXMlzEEI6Epp3I8lg",
+        "name": "Cafe Sababa",
+        "categories": [
+            "Kosher",
+            "Pizza",
+            "Salad"
+        ],
+        "price_range": "$",
+        "rating": 5.0,
+        "review_count": 6,
+        "address": "",
+        "phone": "(217) 344-1328",
+        "website": "http://www.illinihillel.org/cafesababa",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/cafe-sababa-champaign"
+    },
+    {
+        "id": "9MnbQg7kfb_WgxoV0hXKSQ",
+        "name": "Black Dog Smoke & Ale House - Temp. CLOSED",
+        "categories": [
+            "Barbeque",
+            "American"
+        ],
+        "price_range": "$$",
+        "rating": 4.4,
+        "review_count": 918,
+        "address": "",
+        "phone": "(217) 954-0465",
+        "website": "http://www.blackdogchampaign.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/black-dog-smoke-and-ale-house-urbana"
+    },
+    {
+        "id": "ZxQlHVm0pj0ERqpwhEHc6w",
+        "name": "San Maru",
+        "categories": [
+            "Korean",
+            "Food Delivery Services",
+            "Shaved Snow"
+        ],
+        "price_range": "$$",
+        "rating": 4.5,
+        "review_count": 113,
+        "address": "",
+        "phone": "(217) 352-2119",
+        "website": "https://sanmarucu.square.site",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/san-maru-champaign"
+    },
+    {
+        "id": "NZ3A0xYdnmIG68mZeZV6AA",
+        "name": "Bunny’s Tavern",
+        "categories": [
+            "Dive Bars",
+            "American"
+        ],
+        "price_range": "$",
+        "rating": 4.0,
+        "review_count": 75,
+        "address": "",
+        "phone": "(217) 240-7255",
+        "website": "http://www.bunnystavern.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/bunnys-tavern-urbana"
+    },
+    {
+        "id": "X57f6FWZiwI1wOidPPhOrQ",
+        "name": "Dos Reales Mexican Restaurant",
+        "categories": [
+            "Mexican"
+        ],
+        "price_range": "$$",
+        "rating": 3.9,
+        "review_count": 283,
+        "address": "",
+        "phone": "(217) 351-6879",
+        "website": "https://dos-reales.shop",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/dos-reales-mexican-restaurant-champaign-2"
+    }
+]

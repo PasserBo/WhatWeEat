@@ -1,0 +1,167 @@
+[
+    {
+        "id": "u8C8pRvaHXg3PgDrsUHJHQ",
+        "name": "Papa Del’s Pizza",
+        "categories": [
+            "Pizza",
+            "Salad",
+            "Sandwiches"
+        ],
+        "price_range": "$$",
+        "rating": 3.2,
+        "review_count": 643,
+        "address": "",
+        "phone": "(217) 359-7700",
+        "website": "http://www.papadelspizza.com/",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/papa-dels-pizza-champaign-4"
+    },
+    {
+        "id": "Qe8i6H81lE1BIdT6oPP86w",
+        "name": "Golden Wheat",
+        "categories": [
+            "Noodles",
+            "Chinese",
+            "Asian Fusion"
+        ],
+        "price_range": "",
+        "rating": 4.5,
+        "review_count": 15,
+        "address": "",
+        "phone": "(217) 819-0405",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/golden-wheat-champaign"
+    },
+    {
+        "id": "fQWnYXPZx7O5LsA4FsXlOg",
+        "name": "bb.q Chicken Urbana Champaign",
+        "categories": [
+            "Korean",
+            "Chicken Shop",
+            "Chicken Wings"
+        ],
+        "price_range": "$$",
+        "rating": 4.4,
+        "review_count": 24,
+        "address": "",
+        "phone": "(217) 607-2782",
+        "website": "https://bbqchicken.com/?utm_source=yelp&utm_medium=paid&utm_campaign=businessurl",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/bb-q-chicken-urbana-champaign-urbana-2"
+    },
+    {
+        "id": "o13eH93qmWVNFZogkjhd9w",
+        "name": "The Courier Cafe",
+        "categories": [
+            "Breakfast & Brunch",
+            "Cafes",
+            "Burgers"
+        ],
+        "price_range": "$$",
+        "rating": 3.8,
+        "review_count": 488,
+        "address": "",
+        "phone": "(217) 794-7056",
+        "website": "http://couriercafeurbana.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/the-courier-cafe-urbana-2"
+    },
+    {
+        "id": "r7orD0gFdqW8sXtGC87_YA",
+        "name": "Aroma Garden",
+        "categories": [
+            "Chinese"
+        ],
+        "price_range": "",
+        "rating": 5.0,
+        "review_count": 4,
+        "address": "",
+        "phone": "(217) 552-1036",
+        "website": "https://www.aromagardenus.com",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/aroma-garden-urbana"
+    },
+    {
+        "id": "O3zVw-VAcJi8ta4B6v5iAA",
+        "name": "Sun Singer Wine and Spirits",
+        "categories": [
+            "Beer, Wine & Spirits",
+            "Delis",
+            "Wine Bars"
+        ],
+        "price_range": "$$",
+        "rating": 4.0,
+        "review_count": 203,
+        "address": "",
+        "phone": "(217) 351-1115",
+        "website": "http://www.sunsingerwines.com/",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/sun-singer-wine-and-spirits-champaign"
+    },
+    {
+        "id": "vBglTKZQ9nDYEbV2niTK_g",
+        "name": "YGF Malatang UIUC",
+        "categories": [
+            "Vegetarian"
+        ],
+        "price_range": "",
+        "rating": 4.0,
+        "review_count": 1,
+        "address": "",
+        "phone": "",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/ygf-malatang-uiuc-champaign"
+    },
+    {
+        "id": "NPpttQPnIbzezRMURx973g",
+        "name": "Signature Grill",
+        "categories": [
+            "Mediterranean",
+            "Indian",
+            "Mexican"
+        ],
+        "price_range": "$",
+        "rating": 4.3,
+        "review_count": 56,
+        "address": "",
+        "phone": "(217) 607-0893",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/signature-grill-champaign-2"
+    },
+    {
+        "id": "hh66NfJX9G65B3VSy2lL2g",
+        "name": "Juanito’s Tacos",
+        "categories": [
+            "Food Trucks",
+            "American",
+            "Mexican"
+        ],
+        "price_range": "",
+        "rating": 5.0,
+        "review_count": 1,
+        "address": "",
+        "phone": "(217) 973-0732",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/juanito-s-tacos-champaign"
+    },
+    {
+        "id": "5lw5rrhFMz-liykUn8dGSw",
+        "name": "Fernando’s Food",
+        "categories": [
+            "Food Trucks",
+            "Mexican"
+        ],
+        "price_range": "$",
+        "rating": 4.6,
+        "review_count": 65,
+        "address": "",
+        "phone": "(217) 255-0210",
+        "website": "N/A",
+        "image_url": "",
+        "yelp_url": "https://www.yelp.com/biz/fernandos-food-champaign"
+    }
+]

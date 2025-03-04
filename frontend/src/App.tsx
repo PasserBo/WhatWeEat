@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import { Restaurant } from "./types";
 
-const socket = io("https://whatweeat.onrender.com", { transports: ["websocket"] });
+const socket = io("https://whatweeat-backend.onrender.com", { transports: ["websocket"] });
 
 const App: React.FC = () => {
     const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
@@ -11,14 +11,14 @@ const App: React.FC = () => {
     const [results, setResults] = useState<Restaurant[] | null>(null);
     const [submittedVotes, setSubmittedVotes] = useState<number>(0);
     const [voteSubmitted, setVoteSubmitted] = useState<boolean>(false);
-    const [progress, setProgress] = useState<number>(1); // 1/10 进度
+    const [progress, setProgress] = useState<number>(1);
 
     useEffect(() => {
         socket.on("restaurant", (data: { restaurant: Restaurant }) => {
             setRestaurant(data.restaurant);
-            setVoteSubmitted(false);  // 进入新餐厅时重置投票状态
+            setVoteSubmitted(false);
             setSubmittedVotes(0);
-            setProgress((prev) => prev + 1); // 增加进度
+            setProgress((prev) => prev + 1);
         });
 
         socket.on("voteProgress", (count: number) => {
@@ -37,25 +37,27 @@ const App: React.FC = () => {
         }
     };
 
+    const handleRestart = () => {
+        socket.emit("restart");
+        setResults(null);
+        setProgress(1);
+    };
+
     return (
         <Box textAlign="center" p={4} maxW="600px" mx="auto">
             {results ? (
                 <Box>
                     <Text fontSize="2xl" fontWeight="bold" mb={4}>🍽️ 最终结果</Text>
-                    {Array.isArray(results) ? (
-                        results.map((r) => (
-                            <Box key={r.id} p={3} border="1px solid #ccc" borderRadius="md" mb={2}>
-                                <Text fontSize="xl" fontWeight="bold">{r.name}</Text>
-                                <Text>类别: {r.categories.join(", ")}</Text>
-                                <Text>评分: {r.rating} 🌟 ({r.review_count} 条评论)</Text>
-                                <Text>用户评分: {r.averageScore} / 10</Text>
-                                <a href={r.yelp_url} target="_blank" rel="noopener noreferrer">查看 Yelp</a>
-                            </Box>
-                        ))
-                    ) : (
-                        <Text>⏳ 正在计算最终结果...</Text>
-                    )}
-
+                    {results.map((r) => (
+                        <Box key={r.id} p={3} border="1px solid #ccc" borderRadius="md" mb={2}>
+                            <Text fontSize="xl" fontWeight="bold">{r.name}</Text>
+                            <Text>类别: {r.categories.join(", ")}</Text>
+                            <Text>评分: {r.rating} 🌟 ({r.review_count} 条评论)</Text>
+                            <Text>用户评分: {r.averageScore} / 10</Text>
+                            <a href={r.yelp_url} target="_blank" rel="noopener noreferrer">查看 Yelp</a>
+                        </Box>
+                    ))}
+                    <Button colorScheme="red" mt={4} onClick={handleRestart}>🔄 我不服！再来一轮</Button>
                 </Box>
             ) : restaurant ? (
                 <Box>

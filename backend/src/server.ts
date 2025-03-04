@@ -16,12 +16,23 @@ const io = new Server(server, {
     }
 });
 
+const resetGame = () => {
+    currentIndex = 0;
+    votes = {};
+    usersCompleted = 0;
+};
+
+
 let currentIndex = 0;
 let votes: Record<string, number[]> = {};
 let usersCompleted = 0;
 
 io.on("connection", (socket) => {
     console.log("用户连接");
+
+    if (currentIndex >= 10) {
+        resetGame();
+    }
 
     socket.emit("restaurant", { restaurant: restaurants[currentIndex] });
 
@@ -42,7 +53,10 @@ io.on("connection", (socket) => {
                     averageScore: votes[r.id]
                         ? (votes[r.id].reduce((a, b) => a + b, 0) / votes[r.id].length).toFixed(2)
                         : "N/A"
-                }));
+                }))
+                .filter((r) => r.averageScore !== "N/A") // 过滤没有评分的餐厅
+                .sort((a, b) => Number(b.averageScore) - Number(a.averageScore)) // 按评分降序排列
+                .slice(0, 10);
                 io.emit("results", resultsArray); // 确保发送的是数组
             }
 
@@ -50,6 +64,12 @@ io.on("connection", (socket) => {
 
         // 发送当前已提交投票数
         io.emit("voteProgress", usersCompleted);
+    });
+
+    socket.on("restart", ()=>{
+        resetGame();
+        io.emit("restaurant", {restaurant: restaurants[currentIndex] });
+
     });
 
     socket.on("disconnect", () => {

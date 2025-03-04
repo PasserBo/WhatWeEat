@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import { Restaurant } from "./types";
 
-const socket = io("https://whatweeat-backend.onrender.com", { transports: ["websocket"] });
+const socket = io("https://whatweeat.onrender.com", { transports: ["websocket"] });
 
 const App: React.FC = () => {
     const [restaurant, setRestaurant] = useState<Restaurant | null>(null);

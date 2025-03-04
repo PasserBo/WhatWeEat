@@ -30,21 +30,33 @@ io.on("connection", (socket) => {
         votes[data.id].push(data.score);
         usersCompleted++;
 
-        if (usersCompleted >= 3) {
+        if (usersCompleted >= 3) {  // 3 人投票后切换
             currentIndex++;
             usersCompleted = 0;
 
             if (currentIndex < 10) {
                 io.emit("restaurant", { restaurant: restaurants[currentIndex] });
             } else {
-                io.emit("results", votes);
+                const resultsArray = restaurants.map((r) => ({
+                    ...r,
+                    averageScore: votes[r.id]
+                        ? (votes[r.id].reduce((a, b) => a + b, 0) / votes[r.id].length).toFixed(2)
+                        : "N/A"
+                }));
+                io.emit("results", resultsArray); // 确保发送的是数组
             }
+
         }
+
+        // 发送当前已提交投票数
+        io.emit("voteProgress", usersCompleted);
     });
 
     socket.on("disconnect", () => {
         console.log("用户断开连接");
     });
 });
+
+
 
 server.listen(3001, "0.0.0.0", () => console.log("后端运行在 3001 端口"));

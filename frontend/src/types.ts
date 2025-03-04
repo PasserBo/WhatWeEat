@@ -6,6 +6,7 @@ export interface Restaurant {
     rating: number;
     review_count: number;
     yelp_url: string;
+    averageScore?: string;
 }
 
 export interface Vote {

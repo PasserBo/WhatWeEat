@@ -3,7 +3,7 @@ import os
 
 # 设定存放 JSON 文件的目录
 INPUT_FOLDER = "../RestaurantData"
-OUTPUT_FILE = "../RestaurantData/all_restaurants.json"
+OUTPUT_FILE = "../all_restaurants.json"
 
 def merge_json_files():
     all_restaurants = []

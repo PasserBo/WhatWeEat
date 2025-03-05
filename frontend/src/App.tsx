@@ -1,4 +1,4 @@
-import { Box, Button, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Progress } from "@chakra-ui/react";
+import { Box, Button, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Progress, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import { Restaurant } from "./types";
@@ -50,6 +50,14 @@ const App: React.FC = () => {
                     <Text fontSize="2xl" fontWeight="bold" mb={4}>🍽️ 最终结果</Text>
                     {results.map((r) => (
                         <Box key={r.id} p={3} border="1px solid #ccc" borderRadius="md" mb={2}>
+                            <Image
+                                src={r.image_url}
+                                alt={r.name}
+                                borderRadius="md"
+                                mb={2}
+                                boxSize="200px"
+                                objectFit="cover"
+                            />
                             <Text fontSize="xl" fontWeight="bold">{r.name}</Text>
                             <Text>类别: {r.categories.join(", ")}</Text>
                             <Text>评分: {r.rating} 🌟 ({r.review_count} 条评论)</Text>

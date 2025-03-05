@@ -13,7 +13,7 @@
         "address": "",
         "phone": "(217) 359-7700",
         "website": "http://www.papadelspizza.com/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/VGmPJq1y0ZoeWUHiGGgWuQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/papa-dels-pizza-champaign-4"
     },
     {
@@ -30,7 +30,7 @@
         "address": "",
         "phone": "(217) 819-0405",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/VaB5tPzwXii8PhgDHZl5LQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/golden-wheat-champaign"
     },
     {
@@ -47,7 +47,7 @@
         "address": "",
         "phone": "(217) 607-2782",
         "website": "https://bbqchicken.com/?utm_source=yelp&utm_medium=paid&utm_campaign=businessurl",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/sePAQ6J0qdTg8FvtHVED0g/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/bb-q-chicken-urbana-champaign-urbana-2"
     },
     {
@@ -64,7 +64,7 @@
         "address": "",
         "phone": "(217) 794-7056",
         "website": "http://couriercafeurbana.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/neA_C5-BwVDJkDbgmwoPBQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/the-courier-cafe-urbana-2"
     },
     {
@@ -79,7 +79,7 @@
         "address": "",
         "phone": "(217) 552-1036",
         "website": "https://www.aromagardenus.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/SA2JFwzNxfQ5MRR39MfBjA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/aroma-garden-urbana"
     },
     {
@@ -96,7 +96,7 @@
         "address": "",
         "phone": "(217) 351-1115",
         "website": "http://www.sunsingerwines.com/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/l-Eo9HntBKvrYbFq7Pcbug/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/sun-singer-wine-and-spirits-champaign"
     },
     {
@@ -111,7 +111,7 @@
         "address": "",
         "phone": "",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/EqDfv5SDRr3Spt68HX0_Bg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/ygf-malatang-uiuc-champaign"
     },
     {
@@ -128,7 +128,7 @@
         "address": "",
         "phone": "(217) 607-0893",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/f2MzPa8OR8LzWF65kalKpg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/signature-grill-champaign-2"
     },
     {
@@ -145,7 +145,7 @@
         "address": "",
         "phone": "(217) 973-0732",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/GarGd1u4tlyK4u1QLEs6vA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/juanito-s-tacos-champaign"
     },
     {
@@ -161,7 +161,7 @@
         "address": "",
         "phone": "(217) 255-0210",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/kUVgf6GDhiC85mmHes0yUA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/fernandos-food-champaign"
     }
 ]

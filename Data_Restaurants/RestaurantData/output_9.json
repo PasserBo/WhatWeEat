@@ -13,7 +13,7 @@
         "address": "",
         "phone": "",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/v-zL_6z6qXOkfs6aMQtLQw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/sinclaire-s-coffee-champaign"
     },
     {
@@ -29,7 +29,7 @@
         "address": "",
         "phone": "(217) 552-1600",
         "website": "http://mokisushichampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/JqvH33oADQBrydgIIOvggg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/moki-sushi-champaign"
     },
     {
@@ -45,7 +45,7 @@
         "address": "",
         "phone": "(217) 954-1871",
         "website": "https://jurassicgrillchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/1V8GR81L0oJXjRfL4TPx1Q/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/jurassic-grill-champaign"
     },
     {
@@ -62,7 +62,7 @@
         "address": "",
         "phone": "(217) 954-0361",
         "website": "http://crackedongreen.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/KW4bbWmNEoM18jVB2IOzfw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/cracked-on-green-champaign"
     },
     {
@@ -79,7 +79,7 @@
         "address": "",
         "phone": "(217) 352-5399",
         "website": "http://www.merryannsdiner.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/MiPE3U9GMKXLfxQfj1FbuQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/merry-anns-diner-champaign"
     },
     {
@@ -96,7 +96,7 @@
         "address": "",
         "phone": "(217) 344-1328",
         "website": "http://www.illinihillel.org/cafesababa",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/3c3qEO2pCcuXiRelwY0O3Q/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/cafe-sababa-champaign"
     },
     {
@@ -112,7 +112,7 @@
         "address": "",
         "phone": "(217) 954-0465",
         "website": "http://www.blackdogchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/VpOAPOWPJS09WTaU1de06g/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/black-dog-smoke-and-ale-house-urbana"
     },
     {
@@ -129,7 +129,7 @@
         "address": "",
         "phone": "(217) 352-2119",
         "website": "https://sanmarucu.square.site",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/VOBtLQrQbot3fwkh3szLhA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/san-maru-champaign"
     },
     {
@@ -145,7 +145,7 @@
         "address": "",
         "phone": "(217) 240-7255",
         "website": "http://www.bunnystavern.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/4QYHUup8B5q0Pa04x-jbhg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/bunnys-tavern-urbana"
     },
     {
@@ -160,7 +160,7 @@
         "address": "",
         "phone": "(217) 351-6879",
         "website": "https://dos-reales.shop",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/XdzVCEKrr33pNoukwfHQew/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/dos-reales-mexican-restaurant-champaign-2"
     }
 ]

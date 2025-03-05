@@ -12,7 +12,7 @@
         "address": "",
         "phone": "(217) 531-1166",
         "website": "https://www.kofusion.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/od6QSbAMKT7xjIfxIMUumw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/ko-fusion-champaign-2"
     },
     {
@@ -28,7 +28,7 @@
         "address": "",
         "phone": "(217) 328-2538",
         "website": "https://cravings2538.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/gqRytMR0X-9X5be2LIs0ww/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/cravings-champaign-2"
     },
     {
@@ -45,7 +45,7 @@
         "address": "",
         "phone": "(217) 530-4100",
         "website": "https://www.espressoroyalecu.com/locations/the-hub-on-daniel-street/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/QkKmF6Sfa0PddhqgLbQRpw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/espresso-royale-champaign-8"
     },
     {
@@ -60,7 +60,7 @@
         "address": "",
         "phone": "(217) 552-1188",
         "website": "http://www.masijtagrill.com/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/-moMze31qDLfaZFIrXEilA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/masijta-grill-urbana"
     },
     {
@@ -75,7 +75,7 @@
         "address": "",
         "phone": "",
         "website": "http://83viet.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/9Y-8Wa3WlaAjyGVTyFYWZA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/83-vietnamese-cuisine-champaign"
     },
     {
@@ -92,7 +92,7 @@
         "address": "",
         "phone": "(217) 552-5002",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/Q4Xu-OGM9hA-xrL0K5d1bA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/mos-burritos-bar-and-grill-champaign"
     },
     {
@@ -109,7 +109,7 @@
         "address": "",
         "phone": "(217) 800-5726",
         "website": "https://www.baldarottas.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/Vfjdk-VQClVd-TzNlScbgA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/baldarottas-porketta-and-sicilian-sausage-urbana"
     },
     {
@@ -124,7 +124,7 @@
         "address": "",
         "phone": "(217) 607-1906",
         "website": "https://www.sushisiam.net",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/fjEUujvvh7ZPdWi8zH1MIQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/sushi-siam-champaign"
     },
     {
@@ -139,7 +139,7 @@
         "address": "",
         "phone": "(217) 577-2341",
         "website": "http://www.rainbow-garden.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/FkVjW2QXNWfhIAx9pPckiA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/rainbow-garden-champaign-champaign"
     },
     {
@@ -155,7 +155,7 @@
         "address": "",
         "phone": "",
         "website": "http://phostationchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/pejIPB4QGGgAGrDcIlYGsg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/pho-noodle-station-champaign"
     }
 ]

@@ -13,7 +13,7 @@
         "address": "",
         "phone": "(217) 607-1199",
         "website": "http://www.yatai-restaurant.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/eKcEIfC6u1QX2klxanSwAg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/yatai-champaign"
     },
     {
@@ -29,7 +29,7 @@
         "address": "",
         "phone": "(217) 552-1384",
         "website": "http://www.kohinoorchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/7LOHNyDgFX90tPxh3Lh9Nw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/kohinoor-indian-restaurant-and-lounge-champaign"
     },
     {
@@ -45,7 +45,7 @@
         "address": "",
         "phone": "(217) 621-7441",
         "website": "https://www.deedeesbeef.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/IAkyoYk1Sg-_FgXCTFl5Ew/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/dee-dee-s-beef-champaign"
     },
     {
@@ -61,7 +61,7 @@
         "address": "",
         "phone": "(217) 552-1320",
         "website": "https://www.shawarmajoints.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/3UVLuUwDUaszhsMZ-tQ6mA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/shawarma-joint-champaign-3"
     },
     {
@@ -76,7 +76,7 @@
         "address": "",
         "phone": "(217) 356-4300",
         "website": "http://www.biaggis.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/jvlJ0_V55QZ1Fs0MqzbKIQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/biaggis-ristorante-italiano-champaign-2"
     },
     {
@@ -91,7 +91,7 @@
         "address": "",
         "phone": "(217) 607-1848",
         "website": "https://www.tensecondsricenoodle1848.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/gLQriymKg8mNgGLgRgeIOw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/ten-second-rice-noodle-champaign"
     },
     {
@@ -108,7 +108,7 @@
         "address": "",
         "phone": "(217) 552-1276",
         "website": "https://www.dubai-grill.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/MR5o5PCUvC8Hw6qp3lVQ4w/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/dubai-grill-urbana-2"
     },
     {
@@ -124,7 +124,7 @@
         "address": "",
         "phone": "(217) 689-1940",
         "website": "https://restaurants.daveshotchicken.com/il/champaign/best-hot-chicken-sandwich-in-champaign/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/LJFZgUaXuxlToG0rFGCHng/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/daves-hot-chicken-champaign"
     },
     {
@@ -141,7 +141,7 @@
         "address": "",
         "phone": "(217) 607-1434",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/mZLziZhBoteNWoHxmeW6Lg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/mid-summer-lounge-champaign"
     },
     {
@@ -158,7 +158,7 @@
         "address": "",
         "phone": "(844) 480-1048",
         "website": "https://www.eatfinebkk.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/tKQ2EPi-IV5C0h4wU4XY1g/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/eat-fine-design-by-khun-kung-champaign"
     }
 ]

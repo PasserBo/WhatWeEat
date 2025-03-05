@@ -5,6 +5,7 @@ export interface Restaurant {
     price_range: string;
     rating: number;
     review_count: number;
+    image_url: string;
     yelp_url: string;
 }
 

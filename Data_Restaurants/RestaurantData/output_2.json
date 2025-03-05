@@ -13,7 +13,7 @@
         "address": "",
         "phone": "(217) 530-4394",
         "website": "https://aspentaphouse.com/champaign-il/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/9M0umUfFEnVRidd2gECWYA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/aspen-tap-house-champaign"
     },
     {
@@ -30,7 +30,7 @@
         "address": "",
         "phone": "(217) 239-9299",
         "website": "http://www.baxtersgrille.com/home",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/hJfgHpEtSr0l4533HJHeOw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/baxters-american-grille-champaign"
     },
     {
@@ -47,7 +47,7 @@
         "address": "",
         "phone": "(217) 552-1133",
         "website": "http://tenkyu.cafe",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/1FJvE__O3AGcEgHky44JmA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/tenkyu-champaign"
     },
     {
@@ -64,7 +64,7 @@
         "address": "",
         "phone": "(217) 954-1929",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/aa3QuoTm2URDjjBx9mzIog/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/sticky-rice-champaign"
     },
     {
@@ -80,7 +80,7 @@
         "address": "",
         "phone": "(217) 859-7201",
         "website": "https://www.theribeyerestaurant.org",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/nDrAp5kuHGcJved7NwXgtA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/the-ribeye-champaign"
     },
     {
@@ -95,7 +95,7 @@
         "address": "",
         "phone": "(217) 607-1074",
         "website": "https://www.dimsumhouseuiuc.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/LOei4kqBcTj0g1_wmFLLdQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/dim-sum-house-champaign"
     },
     {
@@ -112,7 +112,7 @@
         "address": "",
         "phone": "(217) 239-3505",
         "website": "http://www.biggrovetavern.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/pvwkB5J6AluzsZEgMzB-IQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/big-grove-tavern-champaign"
     },
     {
@@ -129,7 +129,7 @@
         "address": "",
         "phone": "(217) 628-6683",
         "website": "https://www.kajikenus.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/mljuBVdurhbfYGocttn0-w/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/kajiken-champaign-2"
     },
     {
@@ -146,7 +146,7 @@
         "address": "",
         "phone": "(217) 350-0363",
         "website": "https://www.hamiltonwalkers.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/APawicsyZbym8NNI1-04WA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/hamilton-walkers-champaign"
     },
     {
@@ -163,7 +163,7 @@
         "address": "",
         "phone": "(217) 607-1299",
         "website": "https://www.northerncuisineusa.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/_nq51fA-97wIfMNTLA1qoA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/northern-cuisine-champaign"
     }
 ]

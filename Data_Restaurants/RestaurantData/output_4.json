@@ -11,7 +11,7 @@
         "address": "",
         "phone": "(217) 607-2335",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/ec91c6e75078/assets/img/default_avatars/business_medium_square.png",
         "yelp_url": "https://www.yelp.com/biz/caos-hot-pot-champaign"
     },
     {
@@ -27,7 +27,7 @@
         "address": "",
         "phone": "(217) 552-1834",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/k29PSh3DN8OeVx1smAec5w/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/the-himalayan-chimney-champaign"
     },
     {
@@ -43,7 +43,7 @@
         "address": "",
         "phone": "(217) 328-3402",
         "website": "https://www.couriersilvercreek.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/EsgWG9znWK4mzYdSPU2t5A/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/silvercreek-urbana"
     },
     {
@@ -60,7 +60,7 @@
         "address": "",
         "phone": "(217) 607-1306",
         "website": "https://www.martinellismarket.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/ilEuqGB44ljx8H98COcj5Q/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/martinellis-market-bakery-and-deli-champaign-2"
     },
     {
@@ -76,7 +76,7 @@
         "address": "",
         "phone": "(217) 607-5958",
         "website": "http://www.labahiagrill.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/5kYKpXNWWO7nKZNRBaOvIw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/la-bahía-grill-champaign"
     },
     {
@@ -93,7 +93,7 @@
         "address": "",
         "phone": "(217) 600-3007",
         "website": "https://www.parlordoughnuts.com/shops/champaign-il",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/5WhrjoG62-msisv67re38g/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/parlor-doughnuts-champaign"
     },
     {
@@ -110,7 +110,7 @@
         "address": "",
         "phone": "(217) 903-4380",
         "website": "http://www.heybobocafe.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/xI6-qWJDH2QnGv5fro5-Wg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/hey-bobo-cafe-champaign"
     },
     {
@@ -125,7 +125,7 @@
         "address": "",
         "phone": "(217) 352-5555",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/9ABZeZV-i8YkAFZ99ql6XQ/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/epic-burger-champaign"
     },
     {
@@ -140,7 +140,7 @@
         "address": "",
         "phone": "(217) 607-2635",
         "website": "http://shiquan.app",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/rUMVuMjozUQ2zg5h_ukVKA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/shiquan-champaign-2"
     },
     {
@@ -155,7 +155,7 @@
         "address": "",
         "phone": "(217) 954-1641",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/3tvIgp9kJNT0uMtaF-NxBw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/bangkok-thai-and-pho-911-champaign"
     }
 ]

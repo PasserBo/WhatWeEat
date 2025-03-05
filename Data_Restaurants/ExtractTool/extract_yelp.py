@@ -26,6 +26,7 @@ def extract_restaurant_data(input_file, output_file):
     for item in search_results:
         if "bizId" in item and "searchResultBusiness" in item:
             biz_info = item["searchResultBusiness"]
+            image_info = item["scrollablePhotos"]
 
             # 过滤掉广告商家
             if biz_info.get("isAd", False):
@@ -41,7 +42,7 @@ def extract_restaurant_data(input_file, output_file):
                 "address": biz_info.get("formattedAddress", "N/A"),
                 "phone": biz_info.get("phone", "N/A"),
                 "website": (biz_info.get("website")or {}).get("href", "N/A"),
-                "image_url": biz_info.get("scrollablePhotos", {}).get("photoList", [{}])[0].get("src", ""),
+                "image_url": image_info.get("photoList", [])[0].get("src", ""),
                 "yelp_url": f"https://www.yelp.com/biz/{biz_info.get('alias', '')}"
             }
 

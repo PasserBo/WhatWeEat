@@ -12,7 +12,7 @@
         "address": "",
         "phone": "(217) 531-2800",
         "website": "https://punchbarchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/FJeq8x5TV64d_lDiTCXAcw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/punch-champaign"
     },
     {
@@ -29,7 +29,7 @@
         "address": "",
         "phone": "(217) 351-7775",
         "website": "http://www.sevensaintsbar.com/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/vGHzga7GrITQu0TJLC0LNg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/seven-saints-champaign"
     },
     {
@@ -46,7 +46,7 @@
         "address": "",
         "phone": "(217) 687-1866",
         "website": "https://www.napolisitalianchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/YE7qyK7O5qVvth8lqIzOzw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/napolis-italian-restaurant-champaign"
     },
     {
@@ -63,7 +63,7 @@
         "address": "",
         "phone": "(217) 344-1400",
         "website": "http://sakanayarestaurant.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/cHogr6eHY3Jd8lgM27j_uA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/sakanaya-champaign-2"
     },
     {
@@ -79,7 +79,7 @@
         "address": "",
         "phone": "(217) 954-0465",
         "website": "http://www.blackdogchampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/pPuQvv4_modyFqU_6keEBw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/black-dog-smoke-and-ale-house-champaign"
     },
     {
@@ -94,7 +94,7 @@
         "address": "",
         "phone": "(217) 954-1439",
         "website": "http://www.nandomilanochampaign.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/apqDoJMZQbyNUZQqX-xK8w/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/nando-milano-trattoria-champaign"
     },
     {
@@ -111,7 +111,7 @@
         "address": "",
         "phone": "(217) 531-1150",
         "website": "https://www.neilstblues.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/Ei5k0_yoKwBYOV56ij64TA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/neil-st-blues-champaign-3"
     },
     {
@@ -127,7 +127,7 @@
         "address": "",
         "phone": "(217) 607-0168",
         "website": "http://www.watsonschicken.com",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/YS2xn-cTjjdO6aAAvE5KaA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/watsons-shack-and-rail-champaign"
     },
     {
@@ -142,7 +142,7 @@
         "address": "",
         "phone": "(217) 607-2798",
         "website": "N/A",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/HykB_ect-HmmN8gMuEGESw/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/savory-hotpot-house-champaign"
     },
     {
@@ -159,7 +159,7 @@
         "address": "",
         "phone": "(217) 530-4394",
         "website": "https://aspentaphouse.com/champaign-il/",
-        "image_url": "",
+        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/9M0umUfFEnVRidd2gECWYA/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/aspen-tap-house-champaign"
     }
 ]

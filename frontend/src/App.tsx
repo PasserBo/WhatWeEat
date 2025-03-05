@@ -16,6 +16,7 @@ const App: React.FC = () => {
     useEffect(() => {
         socket.on("restaurant", (data: { restaurant: Restaurant }) => {
             setRestaurant(data.restaurant);
+            console.log("接收到餐厅数据:", data.restaurant);
             setVoteSubmitted(false);
             setSubmittedVotes(0);
             setProgress((prev) => prev + 1);
@@ -29,6 +30,10 @@ const App: React.FC = () => {
             setResults(finalResults);
         });
     }, []);
+
+    useEffect(() => {
+        console.log("更新后的图片URL:", restaurant?.image_url); // ✅ 状态更新后再打印
+    }, [restaurant]);
 
     const handleVote = () => {
         if (restaurant && !voteSubmitted) {
@@ -50,14 +55,17 @@ const App: React.FC = () => {
                     <Text fontSize="2xl" fontWeight="bold" mb={4}>🍽️ 最终结果</Text>
                     {results.map((r) => (
                         <Box key={r.id} p={3} border="1px solid #ccc" borderRadius="md" mb={2}>
-                            <Image
-                                src={r.image_url}
-                                alt={r.name}
-                                borderRadius="md"
-                                mb={2}
-                                boxSize="200px"
-                                objectFit="cover"
-                            />
+                            {r.image_url && (
+                                <Image
+                                    src={r.image_url}
+                                    alt={r.name}
+                                    borderRadius="md"
+                                    objectFit="cover"
+                                    w="100%"
+                                    maxH="200px"
+                                    mb={2}
+                                />
+                            )}
                             <Text fontSize="xl" fontWeight="bold">{r.name}</Text>
                             <Text>类别: {r.categories.join(", ")}</Text>
                             <Text>评分: {r.rating} 🌟 ({r.review_count} 条评论)</Text>
@@ -69,6 +77,17 @@ const App: React.FC = () => {
                 </Box>
             ) : restaurant ? (
                 <Box>
+                    {restaurant.image_url && (
+                        <Image
+                            src={restaurant.image_url}
+                            alt={restaurant.name}
+                            borderRadius="md"
+                            objectFit="cover"
+                            w="100%"
+                            maxH="200px"
+                            mb={2}
+                        />
+                    )}
                     <Text fontSize="2xl" fontWeight="bold">🍽️ {restaurant.name}</Text>
                     <Text>{restaurant.categories.join(", ")}</Text>
                     <Text>评分: {restaurant.rating} 🌟 | {restaurant.review_count} 条评论</Text>

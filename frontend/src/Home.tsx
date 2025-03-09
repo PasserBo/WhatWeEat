@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Box, Input, Button, Text, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, useToast, HStack, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import io from "socket.io-client";
-
-const socket = io("https://whatweeat.onrender.com", { transports: ["websocket"] });
+import socket from "./socket";
 
 const Home = () => {
     const [roomId, setRoomId] = useState("");
@@ -12,8 +10,11 @@ const Home = () => {
     const navigate = useNavigate();
     const toast = useToast();
 
+    // console.log("Player connected:", socket.id);
+
     const createRoom = () => {
         const newRoomId = Math.random().toString(36).substring(7);
+        console.log("Creating room with socket ID:", socket.id);
         socket.emit("createRoom", { roomId: newRoomId, maxPlayers });
         setCreatedRoomId(newRoomId);
         navigate(`/room/${newRoomId}`);

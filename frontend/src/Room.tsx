@@ -1,25 +1,22 @@
 import { Box, Button, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import io from "socket.io-client";
+// import io from "socket.io-client";
 import { useParams } from "react-router-dom";
 import { Restaurant, RoomState, VoteResult } from "./types";
-
-const socket = io("https://whatweeat.onrender.com", { transports: ["websocket"] });
+import socket from "./socket";
 
 const Room: React.FC = () => {
     const {roomId} = useParams<{roomId: string}>();
     const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
     const [score, setScore] = useState<number>(5);
-    // const [results, setResults] = useState<Restaurant[] | null>(null);
     const [results, setResults] = useState<VoteResult | null>(null);
     const [isOwner, setIsOwner] = useState(false);
     const [roomState, setRoomState] = useState<RoomState | null>(null);
     const [submittedVotes, setSubmittedVotes] = useState<number>(0);
     const [voteSubmitted, setVoteSubmitted] = useState<boolean>(false);
-    // const [progress, setProgress] = useState<number>(1);
 
     useEffect(() => {
-        console.log(`Joining room ${roomId}`);
+        console.log(`Joining room ${roomId} with socket ID:`, socket.id);
         socket.emit("joinRoom", { roomId });
 
         socket.on("newRestaurant", (restaurantData: Restaurant) => {

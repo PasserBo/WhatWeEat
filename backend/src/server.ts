@@ -26,9 +26,11 @@ io.on("connection", (socket) => {
         io.to(roomId).emit("roomUpdate", {
             roomId,
             owner: socket.id,
-            players: [socket.id],
+            players: [], // Empty array since joinRoom will add the player
             status: 'waiting',
-            maxPlayers
+            maxPlayers,
+            currentRestaurantIndex: 0,
+            restaurants: restaurants.slice(0, 10)
         });
     });
 

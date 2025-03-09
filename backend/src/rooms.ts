@@ -1,3 +1,5 @@
+import { Restaurant } from "./types";
+
 interface Room {
     roomId: string;
     players: string[];
@@ -5,8 +7,8 @@ interface Room {
     owner: string;
     currentRestaurantIndex: number;
     votes: Record<string, number[]>; // 记录每家餐厅的分数
-    restaurants: { id: string; name: string }[];
-    status: string;
+    restaurants: Restaurant[];
+    status: 'waiting' | 'voting' | 'finished';
     currentVotes: Map<string, number>;
 }
 
@@ -52,10 +54,14 @@ export const startVoting = (roomId: string) => {
     room.votes = {};
     room.currentVotes.clear();
     
+    const restaurant = room.restaurants[0];
     return {
-        id: room.restaurants[0].id,
-        name: room.restaurants[0].name,
-        // Add other restaurant fields if they exist in your data
+        ...restaurant,
+        categories: restaurant.categories || [],
+        rating: restaurant.rating || 0,
+        review_count: restaurant.review_count || 0,
+        image_url: restaurant.image_url || '',
+        yelp_url: restaurant.yelp_url || ''
     };
 };
 

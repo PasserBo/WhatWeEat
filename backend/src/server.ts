@@ -33,18 +33,26 @@ io.on("connection", (socket) => {
     });
 
     socket.on("joinRoom",({roomId}) => {
+        console.log(`Player ${socket.id} joining room ${roomId}`);
         if (joinRoom(roomId, socket.id)) {
             socket.join(roomId);
             const room = getRoomState(roomId);
+            console.log(`Room state after join:`, room);
             io.to(roomId).emit("roomUpdate", room);
+        } else {
+            console.log(`Failed to join room ${roomId}`);
         }
     });
 
     socket.on("startVoting",(roomId) => {
+        console.log(`Starting voting for room ${roomId}`);
         const restaurant = startVoting(roomId);
         if (restaurant) {
+            console.log(`Emitting restaurant data:`, restaurant);
             io.to(roomId).emit("newRestaurant", restaurant);
             io.to(roomId).emit("voteUpdate", 0);
+        } else {
+            console.log(`No restaurant data found for room ${roomId}`);
         }
     });
 

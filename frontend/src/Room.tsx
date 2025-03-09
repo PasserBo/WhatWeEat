@@ -19,10 +19,11 @@ const Room: React.FC = () => {
     // const [progress, setProgress] = useState<number>(1);
 
     useEffect(() => {
+        console.log(`Joining room ${roomId}`);
         socket.emit("joinRoom", { roomId });
 
         socket.on("newRestaurant", (restaurantData: Restaurant) => {
-            console.log("收到新餐厅数据:", restaurantData);
+            console.log("Received restaurant data:", restaurantData);
             setRestaurant(restaurantData);
             setVoteSubmitted(false); // Reset vote state for new restaurant
         });
@@ -37,11 +38,13 @@ const Room: React.FC = () => {
         });
 
         socket.on("roomUpdate", (room: RoomState) => {
+            console.log("Received room update:", room);
             setIsOwner(room.owner === socket.id);
             setRoomState(room);
         });
 
         return () => {
+            console.log(`Leaving room ${roomId}`);
             socket.off("newRestaurant");
             socket.off("results");
             socket.off("roomUpdate");
@@ -50,6 +53,7 @@ const Room: React.FC = () => {
     }, [roomId]);
 
     const startVoting = () => {
+        console.log(`Starting voting for room ${roomId}`);
         socket.emit("startVoting", roomId);
     };
 

@@ -44,7 +44,19 @@ export const joinRoom = (roomId: string, playerId: string) => {
  * 开始投票
  */
 export const startVoting = (roomId: string) => {
-    return rooms[roomId]?.restaurants[0] || null;
+    const room = rooms[roomId];
+    if (!room) return null;
+    
+    room.status = 'voting';
+    room.currentRestaurantIndex = 0;
+    room.votes = {};
+    room.currentVotes.clear();
+    
+    return {
+        id: room.restaurants[0].id,
+        name: room.restaurants[0].name,
+        // Add other restaurant fields if they exist in your data
+    };
 };
 
 /**

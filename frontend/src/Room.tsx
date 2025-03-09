@@ -22,6 +22,7 @@ const Room: React.FC = () => {
         socket.on("newRestaurant", (restaurantData: Restaurant) => {
             console.log("Received restaurant data:", restaurantData);
             setRestaurant(restaurantData);
+            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: 0 } : null);
             setVoteSubmitted(false); // Reset vote state for new restaurant
         });
 

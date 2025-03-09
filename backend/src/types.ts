@@ -15,6 +15,7 @@ export interface RoomState {
     players: string[];
     currentRestaurantIndex: number;
     restaurants: Restaurant[];
+    submittedVotes: number;
     status: 'waiting' | 'voting' | 'finished';
 }
 

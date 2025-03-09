@@ -20,7 +20,7 @@ const rooms: Record<string, Room> = {};
 export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: any[]) => {
     rooms[roomId] = {
         roomId,
-        players: [],
+        players: [owner],  // Initialize with owner already in the players array
         maxPlayers,
         owner,
         currentRestaurantIndex: 0,
@@ -36,8 +36,11 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
  */
 export const joinRoom = (roomId: string, playerId: string) => {
     if (rooms[roomId] && rooms[roomId].players.length < rooms[roomId].maxPlayers) {
-        rooms[roomId].players.push(playerId);
-        return true;
+        // Don't add if player is already in the room
+        if (!rooms[roomId].players.includes(playerId)) {
+            rooms[roomId].players.push(playerId);
+            return true;
+        }
     }
     return false;
 };

@@ -23,15 +23,8 @@ io.on("connection", (socket) => {
     socket.on("createRoom",({roomId, maxPlayers}) => {
         createRoom(roomId, maxPlayers, socket.id, restaurants);
         socket.join(roomId);
-        io.to(roomId).emit("roomUpdate", {
-            roomId,
-            owner: socket.id,
-            players: [], // Empty array since joinRoom will add the player
-            status: 'waiting',
-            maxPlayers,
-            currentRestaurantIndex: 0,
-            restaurants: restaurants.slice(0, 10)
-        });
+        const room = getRoomState(roomId);
+        io.to(roomId).emit("roomUpdate", room);
     });
 
     socket.on("joinRoom",({roomId}) => {

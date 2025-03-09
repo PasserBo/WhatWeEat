@@ -9,6 +9,17 @@ export interface Restaurant {
     yelp_url: string;
 }
 
+export interface RoomState {
+    roomId: string;
+    owner: string;
+    players: string[];
+    currentRestaurantIndex: number;
+    restaurants: Restaurant[];
+    status: 'waiting' | 'voting' | 'finished';
+}
+
+export type VoteResult = Record<string, number[]>;
+
 export interface Vote {
     id: string;
     score: number;

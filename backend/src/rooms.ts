@@ -6,6 +6,8 @@ interface Room {
     currentRestaurantIndex: number;
     votes: Record<string, number[]>; // 记录每家餐厅的分数
     restaurants: { id: string; name: string }[];
+    status: string;
+    currentVotes: Map<string, number>;
 }
 
 const rooms: Record<string, Room> = {};
@@ -22,6 +24,8 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
         currentRestaurantIndex: 0,
         votes: {},
         restaurants: restaurantData.slice(0, 10),
+        status: "waiting",
+        currentVotes: new Map(),
     };
 };
 
@@ -81,3 +85,22 @@ export const resetRoom = (roomId: string) => {
         rooms[roomId].votes = {};
     }
 };
+
+export function getRoomState(roomId: string) {
+    const room = rooms[roomId];
+    if (!room) return null;
+    return {
+        roomId,
+        owner: room.owner,
+        players: room.players,
+        status: room.status,
+        currentRestaurantIndex: room.currentRestaurantIndex,
+        restaurants: room.restaurants
+    };
+}
+
+export function getVoteCount(roomId: string) {
+    const room = rooms[roomId];
+    if (!room) return 0;
+    return room.currentVotes.size;
+}

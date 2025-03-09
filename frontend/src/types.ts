@@ -14,3 +14,15 @@ export interface Vote {
     id: string;
     score: number;
 }
+// Interface to track room ownerships, participants, and status
+export interface RoomState {
+    roomId: string;
+    owner: string;
+    players: string[];
+    currentRestaurantIndex: number;
+    restaurants: Restaurant[];
+    status: 'waiting' | 'voting' | 'finished';
+}
+
+// Interface to store the final results of the voting process
+export type VoteResult = (Restaurant & { averageScore: number })[];

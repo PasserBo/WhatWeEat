@@ -12,7 +12,7 @@ const Room: React.FC = () => {
     const [results, setResults] = useState<VoteResult | null>(null);
     const [isOwner, setIsOwner] = useState(false);
     const [roomState, setRoomState] = useState<RoomState | null>(null);
-    const [submittedVotes, setSubmittedVotes] = useState<number>(0);
+    // const [submittedVotes, setSubmittedVotes] = useState<number>(0);
     const [voteSubmitted, setVoteSubmitted] = useState<boolean>(false);
 
     useEffect(() => {
@@ -23,10 +23,6 @@ const Room: React.FC = () => {
             console.log("Received restaurant data:", restaurantData);
             setRestaurant(restaurantData);
             setVoteSubmitted(false); // Reset vote state for new restaurant
-        });
-
-        socket.on("voteUpdate", (votes: number) => {
-            setSubmittedVotes(votes);
         });
 
         socket.on("results", (finalResults: VoteResult) => {
@@ -58,6 +54,7 @@ const Room: React.FC = () => {
         if (restaurant) {
             socket.emit("vote", roomId, restaurant.id, score);  // Fixed vote emit parameters
             setVoteSubmitted(true);
+            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
         }
     };
 
@@ -124,7 +121,7 @@ const Room: React.FC = () => {
                 </Button>
 
                 <Text fontSize="sm" mt={2} color="gray.500">
-                    {submittedVotes} / {roomState?.players.length} 人已提交
+                    {roomState?.submittedVotes} / {roomState?.players.length} 人已提交
                 </Text>
             </Box>
         ) : isOwner ? (

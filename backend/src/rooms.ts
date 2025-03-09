@@ -94,7 +94,20 @@ export const submitVote = (roomId: string, restaurantId: string, score: number) 
  * 获取最终推荐结果
  */
 export const getResults = (roomId: string) => {
-    return rooms[roomId]?.votes || {};
+    const room = rooms[roomId];
+    if (!room) return [];
+
+    return room.restaurants.map(restaurant => {
+        const votes = room.votes[restaurant.id] || [];
+        const averageScore = votes.length > 0 
+            ? (votes.reduce((a, b) => a + b, 0) / votes.length).toFixed(1)
+            : '0';
+
+        return {
+            ...restaurant,
+            averageScore
+        };
+    }).sort((a, b) => Number(b.averageScore) - Number(a.averageScore));
 };
 
 /**

@@ -1,4 +1,4 @@
-a[
+[
     {
         "id": "ATbSKgTbl8mCBK0EQZPr3A",
         "name": "Punch!",
@@ -34,7 +34,7 @@ a[
     },
     {
         "id": "H4O2sccEXOL6rNAn4sa_ug",
-        "name": "Napoli’s Italian Restaurant",
+        "name": "Napoli's Italian Restaurant",
         "categories": [
             "Salad",
             "Italian",
@@ -116,7 +116,7 @@ a[
     },
     {
         "id": "S_9OaE_RBWBIXnUKvxJKsQ",
-        "name": "Watson’s Shack & Rail",
+        "name": "Watson's Shack & Rail",
         "categories": [
             "Bars",
             "American"
@@ -181,7 +181,7 @@ a[
     },
     {
         "id": "SvxSoyZn0WW0c7bFLIYfMA",
-        "name": "Baxter’s American Grille",
+        "name": "Baxter's American Grille",
         "categories": [
             "American",
             "Steakhouses",
@@ -297,7 +297,7 @@ a[
     },
     {
         "id": "hP2DOm7E2H4P7MOS7XN_SQ",
-        "name": "Hamilton Walker’s",
+        "name": "Hamilton Walker's",
         "categories": [
             "Seafood",
             "Steakhouses",
@@ -364,7 +364,7 @@ a[
     },
     {
         "id": "UWlnvLbF8CUWRugRKu3ivg",
-        "name": "Dee-Dee’s Beef",
+        "name": "Dee-Dee's Beef",
         "categories": [
             "Sicilian",
             "Sandwiches"
@@ -396,7 +396,7 @@ a[
     },
     {
         "id": "qeJnMI5RmyJ2TZvkqvjn6Q",
-        "name": "Biaggi’s Ristorante Italiano",
+        "name": "Biaggi's Ristorante Italiano",
         "categories": [
             "Italian"
         ],
@@ -443,7 +443,7 @@ a[
     },
     {
         "id": "Zy-UWnHJkb0ZOuN7RrUDnQ",
-        "name": "Dave’s Hot Chicken",
+        "name": "Dave's Hot Chicken",
         "categories": [
             "Chicken Shop",
             "Halal"
@@ -476,7 +476,7 @@ a[
     },
     {
         "id": "LyIhZMTLfzK4Sce-YAs4og",
-        "name": "Cao’s Hot Pot",
+        "name": "Cao's Hot Pot",
         "categories": [
             "Chinese"
         ],
@@ -523,7 +523,7 @@ a[
     },
     {
         "id": "9dWcbkaRIlMFUjPH1zggYQ",
-        "name": "Martinelli’s Market - Bakery & Deli",
+        "name": "Martinelli's Market - Bakery & Deli",
         "categories": [
             "Delis",
             "Bakeries",
@@ -635,7 +635,7 @@ a[
     },
     {
         "id": "u8C8pRvaHXg3PgDrsUHJHQ",
-        "name": "Papa Del’s Pizza",
+        "name": "Papa Del's Pizza",
         "categories": [
             "Pizza",
             "Salad",
@@ -767,7 +767,7 @@ a[
     },
     {
         "id": "hh66NfJX9G65B3VSy2lL2g",
-        "name": "Juanito’s Tacos",
+        "name": "Juanito's Tacos",
         "categories": [
             "Food Trucks",
             "American",
@@ -784,7 +784,7 @@ a[
     },
     {
         "id": "5lw5rrhFMz-liykUn8dGSw",
-        "name": "Fernando’s Food",
+        "name": "Fernando's Food",
         "categories": [
             "Food Trucks",
             "Mexican"
@@ -863,7 +863,7 @@ a[
     },
     {
         "id": "avyN1FdXcxQfrM8Mqz7WGA",
-        "name": "ISHI sushi & Kaori’s Oven",
+        "name": "ISHI sushi & Kaori's Oven",
         "categories": [
             "Sushi Bars"
         ],
@@ -1040,7 +1040,7 @@ a[
     },
     {
         "id": "9scRPldniHdbTMUEtaQm-g",
-        "name": "Niro’s Gyros",
+        "name": "Niro's Gyros",
         "categories": [
             "Greek"
         ],
@@ -1089,7 +1089,7 @@ a[
     },
     {
         "id": "kKiVfbWLVaAzVHnXHO77eA",
-        "name": "Mama’s African Kitchen",
+        "name": "Mama's African Kitchen",
         "categories": [
             "African"
         ],
@@ -1198,7 +1198,7 @@ a[
     },
     {
         "id": "eliWVKCTRlVJYUBGki25KA",
-        "name": "Mo’s Burritos Bar And Grill",
+        "name": "Mo's Burritos Bar And Grill",
         "categories": [
             "Mexican",
             "Seafood",
@@ -1215,7 +1215,7 @@ a[
     },
     {
         "id": "RucrUwlX6hvGlUOrakViYw",
-        "name": "Baldarotta’s Porketta & Sicilian Sausage",
+        "name": "Baldarotta's Porketta & Sicilian Sausage",
         "categories": [
             "Sandwiches",
             "Gelato",
@@ -1278,7 +1278,7 @@ a[
     },
     {
         "id": "NkEt1gDvimNXLJPz_ZhiHw",
-        "name": "Sinclaire’s Coffee",
+        "name": "Sinclaire's Coffee",
         "categories": [
             "Cafes",
             "Coffee & Tea",
@@ -1344,7 +1344,7 @@ a[
     },
     {
         "id": "wsuzuLD3KV7L8oMinLCI0A",
-        "name": "Merry Ann’s Diner",
+        "name": "Merry Ann's Diner",
         "categories": [
             "Diners",
             "Breakfast & Brunch",
@@ -1411,7 +1411,7 @@ a[
     },
     {
         "id": "NZ3A0xYdnmIG68mZeZV6AA",
-        "name": "Bunny’s Tavern",
+        "name": "Bunny's Tavern",
         "categories": [
             "Dive Bars",
             "American"

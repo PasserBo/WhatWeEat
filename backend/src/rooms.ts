@@ -94,17 +94,23 @@ export const startVoting = (roomId: string) => {
  * 提交投票
  */
 export const submitVote = (roomId: string, restaurantId: string, score: number) => {
-    if (!rooms[roomId].votes[restaurantId]) {
-        rooms[roomId].votes[restaurantId] = [];
+    const room = rooms[roomId];
+    if (!room) return null;
+
+    // Track current votes for this restaurant
+    if (!room.votes[restaurantId]) {
+        room.votes[restaurantId] = [];
     }
-    rooms[roomId].votes[restaurantId].push(score);
+    room.votes[restaurantId].push(score);
+    room.currentVotes.set(restaurantId, room.votes[restaurantId].length);
 
     // 检查是否所有人都投票了
-    if (rooms[roomId].votes[restaurantId].length >= rooms[roomId].players.length) {
-        rooms[roomId].currentRestaurantIndex++;
+    if (room.votes[restaurantId].length >= room.players.length) {
+        room.currentRestaurantIndex++;
+        room.currentVotes.clear(); // Clear current votes for next restaurant
 
-        if (rooms[roomId].currentRestaurantIndex < 10) {
-            return rooms[roomId].restaurants[rooms[roomId].currentRestaurantIndex];
+        if (room.currentRestaurantIndex < 10) {
+            return room.restaurants[room.currentRestaurantIndex];
         } else {
             return "FINISHED";
         }

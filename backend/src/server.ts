@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
             io.to(roomId).emit("results", getResults(roomId));
         } else if(result) {
             io.to(roomId).emit("newRestaurant", result);
-            io.to(roomId).emit("voteUpdate", 0);
+            io.to(roomId).emit("voteUpdate", 0);  // Reset vote count for new restaurant
         }
     });
 

@@ -22,8 +22,12 @@ const Room: React.FC = () => {
         socket.on("newRestaurant", (restaurantData: Restaurant) => {
             console.log("Received restaurant data:", restaurantData);
             setRestaurant(restaurantData);
-            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: 0 } : null);
             setVoteSubmitted(false); // Reset vote state for new restaurant
+        });
+
+        socket.on("voteUpdate", (votes: number) => {
+            console.log("Received vote update:", votes);
+            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: votes } : null);
         });
 
         socket.on("results", (finalResults: VoteResult) => {
@@ -53,13 +57,8 @@ const Room: React.FC = () => {
 
     const handleVote = () => {
         if (restaurant) {
-            socket.emit("vote", roomId, restaurant.id, score);  // Fixed vote emit parameters
+            socket.emit("vote", roomId, restaurant.id, score);
             setVoteSubmitted(true);
-            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
-        } else if(results){
-            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
-        } else {
-            console.error("餐厅数据为空");
         }
     };
 

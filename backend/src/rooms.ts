@@ -47,6 +47,12 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
     };
 };
 
+export const restartRoom = (roomId: string) => {
+    rooms[roomId].currentRestaurantIndex = 0;
+    rooms[roomId].votes = {};
+    rooms[roomId].currentVotes.clear();
+}
+
 /**
  * 加入房间
  */

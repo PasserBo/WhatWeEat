@@ -56,6 +56,10 @@ const Room: React.FC = () => {
             socket.emit("vote", roomId, restaurant.id, score);  // Fixed vote emit parameters
             setVoteSubmitted(true);
             setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
+        } else if(results){
+            setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
+        } else {
+            console.error("餐厅数据为空");
         }
     };
 
@@ -88,7 +92,12 @@ const Room: React.FC = () => {
                         <a href={r.yelp_url} target="_blank" rel="noopener noreferrer">查看 Yelp</a>
                     </Box>
                 ))}
+                {/* If someone want to restart the room, they can click the button */}
                 <Button colorScheme="red" mt={4} onClick={handleRestart}>🔄 我不服！再来一轮</Button>
+                {/* Show how many people want to restart the room */}
+                <Text fontSize="sm" mt={2} color="gray.500">
+                    {roomState?.submittedVotes} / {roomState?.players.length} 人觉得不服！
+                </Text>
             </Box>
         ) : restaurant ? (
             <Box>

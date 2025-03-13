@@ -15,17 +15,33 @@ interface Room {
 const rooms: Record<string, Room> = {};
 
 /**
+ * 随机选择指定数量的餐厅
+ */
+const selectRandomRestaurants = (restaurantData: Restaurant[], count: number): Restaurant[] => {
+    // Create a copy of the array to avoid modifying the original
+    const shuffled = [...restaurantData];
+    
+    // Fisher-Yates shuffle algorithm
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    
+    return shuffled.slice(0, count);
+};
+
+/**
  * 创建新房间
  */
-export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: any[]) => {
+export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[]) => {
     rooms[roomId] = {
         roomId,
-        players: [owner],  // Initialize with owner already in the players array
+        players: [owner],
         maxPlayers,
         owner,
         currentRestaurantIndex: 0,
         votes: {},
-        restaurants: restaurantData.slice(0, 10),
+        restaurants: selectRandomRestaurants(restaurantData, 10), // Randomly select 10 restaurants
         status: "waiting",
         currentVotes: new Map(),
     };

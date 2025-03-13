@@ -3,7 +3,7 @@ import * as http from "http";
 import { Server } from "socket.io";
 import * as cors from "cors";
 import { restaurants } from "./data";
-import { createRoom, joinRoom, startVoting, submitVote, getResults, getRoomState, getVoteCount } from "./rooms";
+import { createRoom, joinRoom, startVoting, submitVote, getResults, getRoomState, getVoteCount, restartRoom, rooms } from "./rooms";
 
 const app = express();
 
@@ -61,6 +61,32 @@ io.on("connection", (socket) => {
         } else if(result) {
             io.to(roomId).emit("newRestaurant", result);
             io.to(roomId).emit("voteUpdate", 0);  // Reset vote count for new restaurant
+        }
+    });
+
+    socket.on("restart", (roomId) => {
+        const room = rooms[roomId];
+        if (!room) return;
+
+        // Track restart votes
+        if (!room.votes['restart']) {
+            room.votes['restart'] = [];
+        }
+        room.votes['restart'].push(1); // 1 means want to restart
+        room.currentVotes.set('restart', room.votes['restart'].length);
+        
+        const currentVotes = getVoteCount(roomId);
+        io.to(roomId).emit("voteUpdate", currentVotes);
+
+        // Check if everyone wants to restart
+        if (room.votes['restart'].length >= room.players.length) {
+            restartRoom(roomId);
+            const restaurant = startVoting(roomId);
+            if (restaurant) {
+                io.to(roomId).emit("newRestaurant", restaurant);
+                io.to(roomId).emit("voteUpdate", 0);
+                io.to(roomId).emit("results", null); // Clear results
+            }
         }
     });
 

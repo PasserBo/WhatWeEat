@@ -14,6 +14,8 @@ interface Room {
 
 const rooms: Record<string, Room> = {};
 
+export { rooms };
+
 /**
  * 随机选择指定数量的餐厅
  */
@@ -48,10 +50,14 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
 };
 
 export const restartRoom = (roomId: string) => {
-    rooms[roomId].currentRestaurantIndex = 0;
-    rooms[roomId].votes = {};
-    rooms[roomId].currentVotes.clear();
-}
+    const room = rooms[roomId];
+    if (!room) return;
+
+    room.currentRestaurantIndex = 0;
+    room.votes = {};
+    room.currentVotes.clear();
+    room.status = 'voting';
+};
 
 /**
  * 加入房间

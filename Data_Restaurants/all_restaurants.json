@@ -1,4 +1,4 @@
-[
+a[
     {
         "id": "ATbSKgTbl8mCBK0EQZPr3A",
         "name": "Punch!",
@@ -473,23 +473,6 @@
         "website": "N/A",
         "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/mZLziZhBoteNWoHxmeW6Lg/348s.jpg",
         "yelp_url": "https://www.yelp.com/biz/mid-summer-lounge-champaign"
-    },
-    {
-        "id": "xWmR9ILd2SZhoUrVkkhuZw",
-        "name": "Eat Fine Design By Khun Kung",
-        "categories": [
-            "Caterers",
-            "Thai",
-            "Food Delivery Services"
-        ],
-        "price_range": "",
-        "rating": 5.0,
-        "review_count": 9,
-        "address": "",
-        "phone": "(844) 480-1048",
-        "website": "https://www.eatfinebkk.com",
-        "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/tKQ2EPi-IV5C0h4wU4XY1g/348s.jpg",
-        "yelp_url": "https://www.yelp.com/biz/eat-fine-design-by-khun-kung-champaign"
     },
     {
         "id": "LyIhZMTLfzK4Sce-YAs4og",

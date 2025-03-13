@@ -63,7 +63,9 @@ const Room: React.FC = () => {
     };
 
     const handleRestart = () => {
-        socket.emit("restart", roomId);
+        if(results){
+            socket.emit("restart", roomId);
+        }
     };
 
     return (

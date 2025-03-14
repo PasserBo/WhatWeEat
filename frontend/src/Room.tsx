@@ -1,18 +1,17 @@
-import { Box, Button, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Image } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-// import io from "socket.io-client";
 import { useParams } from "react-router-dom";
 import { Restaurant, RoomState, VoteResult } from "./types";
 import socket from "./socket";
+import { RestaurantCard } from "./components/RestaurantCard";
+import { Button } from "./components/ui/button";
 
 const Room: React.FC = () => {
     const {roomId} = useParams<{roomId: string}>();
     const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
-    const [score, setScore] = useState<number>(5);
     const [results, setResults] = useState<VoteResult | null>(null);
     const [isOwner, setIsOwner] = useState(false);
     const [roomState, setRoomState] = useState<RoomState | null>(null);
-    // const [submittedVotes, setSubmittedVotes] = useState<number>(0);
     const [voteSubmitted, setVoteSubmitted] = useState<boolean>(false);
 
     useEffect(() => {
@@ -22,7 +21,7 @@ const Room: React.FC = () => {
         socket.on("newRestaurant", (restaurantData: Restaurant) => {
             console.log("Received restaurant data:", restaurantData);
             setRestaurant(restaurantData);
-            setVoteSubmitted(false); // Reset vote state for new restaurant
+            setVoteSubmitted(false);
         });
 
         socket.on("voteUpdate", (votes: number) => {
@@ -33,6 +32,7 @@ const Room: React.FC = () => {
         socket.on("results", (finalResults: VoteResult) => {
             console.log("最终结果:", finalResults);
             setResults(finalResults);
+            setVoteSubmitted(false);
         });
 
         socket.on("roomUpdate", (room: RoomState) => {
@@ -55,7 +55,7 @@ const Room: React.FC = () => {
         socket.emit("startVoting", roomId);
     };
 
-    const handleVote = () => {
+    const handleVote = (score: number) => {
         if (restaurant) {
             socket.emit("vote", roomId, restaurant.id, score);
             setVoteSubmitted(true);
@@ -65,84 +65,62 @@ const Room: React.FC = () => {
     const handleRestart = () => {
         if(results){
             socket.emit("restart", roomId);
+            setVoteSubmitted(true);
         }
     };
 
     return (
-        <Box textAlign="center" p={4} maxW="600px" mx="auto">
-        {results ? (
-            <Box>
-                <Text fontSize="2xl" fontWeight="bold" mb={4}>🍽️ 最终结果</Text>
-                {results.map((r) => (
-                    <Box key={r.id} p={3} border="1px solid #ccc" borderRadius="md" mb={2}>
-                        {r.image_url && (
-                            <Image
-                                src={r.image_url}
-                                alt={r.name}
-                                borderRadius="md"
-                                objectFit="cover"
-                                w="100%"
-                                maxH="200px"
-                                mb={2}
-                            />
-                        )}
-                        <Text fontSize="xl" fontWeight="bold">{r.name}</Text>
-                        <Text>类别: {r.categories.join(", ")}</Text>
-                        <Text>评分: {r.rating} 🌟 ({r.review_count} 条评论)</Text>
-                        <Text>用户评分: {r.averageScore} / 10</Text>
-                        <a href={r.yelp_url} target="_blank" rel="noopener noreferrer">查看 Yelp</a>
-                    </Box>
-                ))}
-                {/* If someone want to restart the room, they can click the button */}
-                <Button colorScheme="red" mt={4} onClick={handleRestart}>🔄 我不服！再来一轮</Button>
-                {/* Show how many people want to restart the room */}
-                <Text fontSize="sm" mt={2} color="gray.500">
-                    {roomState?.submittedVotes} / {roomState?.players.length} 人觉得不服！
-                </Text>
-            </Box>
-        ) : restaurant ? (
-            <Box>
-                {restaurant.image_url && (
-                    <Image
-                        src={restaurant.image_url}
-                        alt={restaurant.name}
-                        borderRadius="md"
-                        objectFit="cover"
-                        w="100%"
-                        maxH="200px"
-                        mb={2}
-                    />
+        <div className="min-h-screen bg-background p-4 md:p-8">
+            <div className="max-w-4xl mx-auto space-y-8">
+                {results ? (
+                    <div className="space-y-8">
+                        <h1 className="text-3xl font-bold text-center">🍽️ 最终结果</h1>
+                        <div className="space-y-6">
+                            {results.map((r) => (
+                                <RestaurantCard
+                                    key={r.id}
+                                    restaurant={r}
+                                    score={r.averageScore}
+                                    showVoting={false}
+                                />
+                            ))}
+                        </div>
+                        <div className="text-center space-y-4">
+                            <Button
+                                onClick={handleRestart}
+                                disabled={voteSubmitted}
+                                variant={voteSubmitted ? "outline" : "default"}
+                                size="lg"
+                            >
+                                {voteSubmitted ? "🔄 再来一轮" : "🔄 我不服！"}
+                            </Button>
+                            <p className="text-sm text-muted-foreground">
+                                {roomState?.submittedVotes} / {roomState?.players.length} 人觉得不服！
+                            </p>
+                        </div>
+                    </div>
+                ) : restaurant ? (
+                    <div className="space-y-8">
+                        <RestaurantCard
+                            restaurant={restaurant}
+                            onVote={handleVote}
+                            isVoted={voteSubmitted}
+                        />
+                        <p className="text-center text-sm text-muted-foreground">
+                            {roomState?.submittedVotes} / {roomState?.players.length} 人已提交
+                        </p>
+                    </div>
+                ) : isOwner ? (
+                    <div className="text-center">
+                        <Button onClick={startVoting} size="lg">
+                            开始投票
+                        </Button>
+                    </div>
+                ) : (
+                    <p className="text-center text-muted-foreground">⏳ 正在等待房主开始...</p>
                 )}
-                <Text fontSize="2xl" fontWeight="bold">🍽️ {restaurant.name}</Text>
-                <Text>{restaurant.categories.join(", ")}</Text>
-                <Text>评分: {restaurant.rating} 🌟 | {restaurant.review_count} 条评论</Text>
-                <a href={restaurant.yelp_url} target="_blank" rel="noopener noreferrer">查看 Yelp</a>
-
-                <Slider defaultValue={5} min={1} max={10} step={1} onChange={setScore} isDisabled={voteSubmitted}>
-                    <SliderTrack><SliderFilledTrack /></SliderTrack>
-                    <SliderThumb />
-                </Slider>
-
-                <Button
-                    colorScheme="blue"
-                    mt={4}
-                    onClick={handleVote}
-                    isDisabled={voteSubmitted} >
-                    {voteSubmitted ? "✅ 已提交" : "提交评分"}
-                </Button>
-
-                <Text fontSize="sm" mt={2} color="gray.500">
-                    {roomState?.submittedVotes} / {roomState?.players.length} 人已提交
-                </Text>
-            </Box>
-        ) : isOwner ? (
-                <Button onClick={startVoting} colorScheme="blue">
-                    开始投票
-                </Button>
-        ) :(
-            <Text>⏳ 正在加载餐厅数据...</Text>
-        )}
-        </Box>
+            </div>
+        </div>
     );
 };
 

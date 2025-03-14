@@ -7,7 +7,9 @@ export interface Restaurant {
     review_count: number;
     image_url: string;
     yelp_url: string;
-    averageScore?: string;
+    phone: string;
+    website: string;
+    address: string;
 }
 
 export interface Vote {
@@ -19,10 +21,10 @@ export interface RoomState {
     roomId: string;
     owner: string;
     players: string[];
+    status: "waiting" | "voting" | "finished";
     currentRestaurantIndex: number;
     restaurants: Restaurant[];
-    submittedVotes: number;
-    status: 'waiting' | 'voting' | 'finished';
+    submittedVotes?: number;
 }
 
 // Interface to store the final results of the voting process

@@ -1,98 +1,76 @@
 import { useState } from "react";
-import { Box, Input, Button, Text, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, useToast, HStack, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import socket from "./socket";
+import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
+import { Label } from "./components/ui/label";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./components/ui/card";
 
 const Home = () => {
     const [roomId, setRoomId] = useState("");
-    const [maxPlayers, setMaxPlayers] = useState(3);
-    const [createdRoomId, setCreatedRoomId] = useState("");
+    const [maxPlayers, setMaxPlayers] = useState("4");
     const navigate = useNavigate();
-    const toast = useToast();
-
-    // console.log("Player connected:", socket.id);
 
     const createRoom = () => {
-        const newRoomId = Math.random().toString(36).substring(7);
-        console.log("Creating room with socket ID:", socket.id);
-        socket.emit("createRoom", { roomId: newRoomId, maxPlayers });
-        setCreatedRoomId(newRoomId);
-        navigate(`/room/${newRoomId}`);
-        
-        // Show room code in a toast notification
-        toast({
-            title: "房间已创建",
-            description: `分享房间代码: ${newRoomId}`,
-            status: "success",
-            duration: 10000,
-            isClosable: true,
-        });
+        socket.emit("createRoom", { roomId, maxPlayers: parseInt(maxPlayers) });
+        navigate(`/room/${roomId}`);
     };
 
     const joinRoom = () => {
-        if (!roomId.trim()) {
-            toast({
-                title: "错误",
-                description: "请输入房间代码",
-                status: "error",
-                duration: 3000,
-                isClosable: true,
-            });
-            return;
-        }
-        socket.emit("joinRoom", { roomId });
         navigate(`/room/${roomId}`);
     };
 
     return (
-        <Box textAlign="center" p={8} maxW="400px" mx="auto">
-            <VStack spacing={6}>
-                <Text fontSize="3xl" fontWeight="bold" mb={4}>🍽️ What We Eat</Text>
-                
-                <Box w="100%" p={4} borderWidth="1px" borderRadius="lg">
-                    <Text fontSize="xl" mb={4}>创建新房间</Text>
-                    <VStack spacing={4}>
-                        <NumberInput 
-                            min={2} 
-                            max={10} 
-                            value={maxPlayers} 
-                            onChange={(_, value) => setMaxPlayers(value)}
-                        >
-                            <NumberInputField placeholder="最大玩家数" />
-                            <NumberInputStepper>
-                                <NumberIncrementStepper />
-                                <NumberDecrementStepper />
-                            </NumberInputStepper>
-                        </NumberInput>
-                        <Button 
-                            onClick={createRoom} 
-                            colorScheme="blue" 
-                            w="100%"
-                        >
-                            创建房间
-                        </Button>
-                    </VStack>
-                </Box>
-
-                <Box w="100%" p={4} borderWidth="1px" borderRadius="lg">
-                    <Text fontSize="xl" mb={4}>加入房间</Text>
-                    <VStack spacing={4}>
-                        <Input 
-                            placeholder="输入房间代码" 
-                            value={roomId} 
+        <div className="min-h-screen bg-background flex items-center justify-center p-4">
+            <Card className="w-full max-w-md">
+                <CardHeader>
+                    <CardTitle className="text-2xl text-center">🍽️ 今天吃什么？</CardTitle>
+                    <CardDescription className="text-center">
+                        创建或加入一个房间，和朋友一起决定去哪里吃饭
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                        <Label htmlFor="roomId">房间号</Label>
+                        <Input
+                            id="roomId"
+                            type="text"
+                            placeholder="输入房间号"
+                            value={roomId}
                             onChange={(e) => setRoomId(e.target.value)}
                         />
-                        <Button 
-                            onClick={joinRoom} 
-                            colorScheme="green" 
-                            w="100%"
-                        >
-                            加入房间
-                        </Button>
-                    </VStack>
-                </Box>
-            </VStack>
-        </Box>
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="maxPlayers">最大人数</Label>
+                        <Input
+                            id="maxPlayers"
+                            type="number"
+                            min="2"
+                            max="10"
+                            value={maxPlayers}
+                            onChange={(e) => setMaxPlayers(e.target.value)}
+                        />
+                    </div>
+                </CardContent>
+                <CardFooter className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                        className="flex-1"
+                        onClick={createRoom}
+                        disabled={!roomId || !maxPlayers}
+                    >
+                        创建房间
+                    </Button>
+                    <Button
+                        className="flex-1"
+                        variant="outline"
+                        onClick={joinRoom}
+                        disabled={!roomId}
+                    >
+                        加入房间
+                    </Button>
+                </CardFooter>
+            </Card>
+        </div>
     );
 };
 

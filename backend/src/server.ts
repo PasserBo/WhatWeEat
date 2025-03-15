@@ -41,13 +41,20 @@ io.on("connection", (socket) => {
 
     socket.on("startVoting",(roomId) => {
         console.log(`Starting voting for room ${roomId}`);
-        const restaurant = startVoting(roomId);
-        if (restaurant) {
-            console.log(`Emitting restaurant data:`, restaurant);
-            io.to(roomId).emit("newRestaurant", restaurant);
-            io.to(roomId).emit("voteUpdate", 0);
-        } else {
-            console.log(`No restaurant data found for room ${roomId}`);
+        const room = rooms[roomId];
+        if (room) {
+            // Update room status
+            room.status = "voting";
+            
+            // First emit room update to all players
+            io.to(roomId).emit("roomUpdate", getRoomState(roomId));
+            
+            // Then emit the first restaurant
+            const restaurant = startVoting(roomId);
+            if (restaurant) {
+                io.to(roomId).emit("newRestaurant", restaurant);
+                io.to(roomId).emit("voteUpdate", 0);
+            }
         }
     });
 

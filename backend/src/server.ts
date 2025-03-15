@@ -62,8 +62,11 @@ io.on("connection", (socket) => {
         const result = submitVote(roomId, restaurantId, score);
         const currentVotes = getVoteCount(roomId);
         io.to(roomId).emit("voteUpdate", currentVotes);
+        const room = rooms[roomId];
 
         if (result === "FINISHED") {
+            room.status = "finished";
+            io.to(roomId).emit("roomUpdate", getRoomState(roomId));
             io.to(roomId).emit("results", getResults(roomId));
         } else if(result) {
             io.to(roomId).emit("newRestaurant", result);

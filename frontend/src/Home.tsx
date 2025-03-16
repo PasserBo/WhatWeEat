@@ -5,7 +5,7 @@ import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
 import {
   Card,
-  CardContent,
+  CardContent, 
   CardDescription,
   CardHeader,
   CardTitle,
@@ -14,7 +14,7 @@ import {
 import { RoomState } from "./types";
 import socket from "@/lib/socket";
 
-function generateRoomId() {
+function generateRoomId() { 
   return Math.random().toString(36).substring(5);
 }
 
@@ -52,7 +52,6 @@ export default function Home() {
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="roomId">Room ID</Label>
               <Input
-                id="roomId"
                 placeholder="Enter room ID to join"
                 value={roomId}
                 onChange={(e) => setRoomId(e.target.value)}

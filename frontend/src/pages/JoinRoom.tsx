@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FOOD_EMOJIS } from "@/utils/emoji";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RoomCard } from "@/components/RoomCard";
-import { RoomState, EmojiOptions } from "@/types";
+import { RoomState } from "@/types";
 import socket from "@/lib/socket";
 
 export default function JoinRoom() {

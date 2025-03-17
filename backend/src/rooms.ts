@@ -38,7 +38,7 @@ const selectRandomRestaurants = (restaurantData: Restaurant[], count: number): R
 /**
  * 创建新房间
  */
-export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[], emojiPassword: string[]) => {
+export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[]) => {
     rooms[roomId] = {
         roomId,
         players: [owner],
@@ -49,8 +49,11 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
         restaurants: selectRandomRestaurants(restaurantData, 10), // Randomly select 10 restaurants
         status: "waiting",
         currentVotes: new Map(),
-        emojiPassword: [],
-        emojiOptions: generateEmojiOptions(emojiPassword),
+        emojiPassword: (() => {
+            const password = generateEmojiPassword();
+            return password;
+        })(),
+        emojiOptions: generateEmojiOptions(rooms[roomId].emojiPassword),
     };
 };
 
@@ -209,3 +212,13 @@ function selectRandomEmojis(passwordEmoji: string, count: number): string[] {
     return selected;
 }
 
+// Generate 3 random emojis as password
+// Use emojiData to generate the password
+function generateEmojiPassword(): string[] {
+    const password: string[] = [];
+    for (let i = 0; i < 3; i++) {
+        const randomIndex = Math.floor(Math.random() * emojiData.length);
+        password.push(emojiData[randomIndex].emoji);
+    }
+    return password;
+}

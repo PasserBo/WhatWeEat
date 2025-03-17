@@ -30,15 +30,5 @@ export interface RoomState {
   submittedVotes: number;
 } 
 
-export interface EmojiOptions {
-  currentStrp: number;
-  options:[][];
-}
-
-export interface EmojiData {
-  emoji: string;
-  label: string;
-}
-
 // Interface to store the final results of the voting process
 export type VoteResult = (Restaurant & { averageScore: number })[];

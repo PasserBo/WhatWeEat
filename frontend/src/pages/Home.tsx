@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
-import { generateEmojiPassword, generateAvatar } from "../utils/emoji";
 import {
   Card,
   CardContent, 
@@ -29,14 +28,12 @@ export default function Home() {
   
   const createRoom = () => {
     const newRoomId = generateRoomId();
-    const emojiPassword = generateEmojiPassword();
-    const avatar = generateAvatar();
+    // const avatar = generateAvatar();
     console.log("Creating room with ID:", socket.id);
     socket.emit("createRoom", { 
       roomId: newRoomId, 
       maxPlayers, 
-      emojiPassword, 
-      ownerAvatar: avatar
+      // ownerAvatar: avatar
     });
     setCreatedRoomId(newRoomId);
     navigate(`/room/${newRoomId}`);

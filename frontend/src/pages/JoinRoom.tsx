@@ -32,6 +32,7 @@ export default function JoinRoom() {
     });
 
     socket.on("emojiOptions", (options: string[][]) => {
+      console.log('Received emoji options:', options);
       // Set received emoji options
       setEmojiOptions(options);
       // Set current step to 0
@@ -68,12 +69,14 @@ export default function JoinRoom() {
   };
 
   const handleJoinRoom = (roomId: string) => {
+    console.log('handleJoinRoom called with roomId:', roomId);
     setSelectedRoomId(roomId);
     socket.emit("getEmojiOptions", {roomId: roomId});
   };
 
 
   if (selectedRoomId) {
+    console.log('selectedRoomId is:', selectedRoomId);
     return (
       <div className="container flex items-center justify-center min-h-screen">
         <Card className="w-[400px]">
@@ -92,7 +95,7 @@ export default function JoinRoom() {
                     {emoji}
                   </div>
                 ))}
-                {/* show the empty emojis */}
+                {/* show the empty emojis slots */}
                 {Array(3 - selectedEmojis.length).fill("").map((_, index) => (
                   <div key={`empty-${index}`} className="w-12 h-12 border rounded flex items-center justify-center">
                     ⬜
@@ -147,7 +150,10 @@ export default function JoinRoom() {
                 <RoomCard
                   key={room.roomId}
                   room={room}
-                  onJoin={handleJoinRoom}
+                  onJoin={(roomId) => {
+                    console.log('RoomCard onJoin clicked for room:', roomId);
+                    handleJoinRoom(roomId);
+                  }}
                 />
               ))
             )}

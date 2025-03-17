@@ -45,8 +45,10 @@ io.on("connection", (socket) => {
     });
 
     socket.on("getEmojiOptions", (roomId) => {
+        console.log(`Getting emoji options for room ${roomId}`);
         const room = rooms[roomId];
         if (room) {
+            console.log(`Emoji options for room ${roomId}:`, room.emojiOptions);
             socket.emit("emojiOptions", room.emojiOptions);
         }
     });

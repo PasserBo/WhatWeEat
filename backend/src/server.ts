@@ -38,6 +38,11 @@ io.on("connection", (socket) => {
             console.log(`Failed to join room ${roomId}`);
         }
     });
+    
+    socket.on("getAvailableRooms", () => {
+        const availableRooms = Object.values(rooms).filter(room => room.status === "waiting");
+        socket.emit("availableRooms", availableRooms);
+    });
 
     socket.on("startVoting",(roomId) => {
         console.log(`Starting voting for room ${roomId}`);

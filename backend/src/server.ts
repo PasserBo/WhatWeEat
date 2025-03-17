@@ -75,6 +75,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("restart", (roomId) => {
+        // 如果房间不存在，返回
         const room = rooms[roomId];
         if (!room) return;
 
@@ -84,14 +85,20 @@ io.on("connection", (socket) => {
         }
         room.votes['restart'].push(1); // 1 means want to restart
         room.currentVotes.set('restart', room.votes['restart'].length);
-        
+        // 更新投票人数
         const currentVotes = getVoteCount(roomId);
         io.to(roomId).emit("voteUpdate", currentVotes);
 
         // Check if everyone wants to restart
         if (room.votes['restart'].length >= room.players.length) {
+            // Use function restartRoom
+            // Set status to voting
+            // Clear results
+            // Clear votes
+            // Clear current restaurant index
             restartRoom(roomId);
             const restaurant = startVoting(roomId);
+            // 如果餐厅存在，则更新餐厅
             if (restaurant) {
                 io.to(roomId).emit("newRestaurant", restaurant);
                 io.to(roomId).emit("voteUpdate", 0);

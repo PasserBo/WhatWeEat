@@ -128,7 +128,7 @@ const handleRestart = () => {
             isVoted={voteSubmitted}
           />
           <p className="text-sm text-muted-foreground">
-            Votes: {voteCount} / {roomState?.players.length}
+            Votes: {roomState?.submittedVotes} / {roomState?.players.length}
           </p>
         </div>
       )}

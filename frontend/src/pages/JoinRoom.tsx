@@ -28,6 +28,7 @@ export default function JoinRoom() {
 
     // Listen for room updates
     socket.on("availableRooms", (availableRooms: RoomState[]) => {
+      console.log('Received available rooms:', availableRooms);
       setRooms(availableRooms);
     });
 

@@ -174,16 +174,19 @@ export function generateEmojiOptions(emojiPassword: string[]) {
     for (let i = 0; i < 3; i++) {
         // push password emoji based on the index
         emojiOptions[i].push(emojiPassword[i]);
+        console.log(`[Rooms] Added password emoji ${emojiPassword[i]} to row ${i}`);
         // push 4 random emojis without repetition
         const randomEmojis = selectRandomEmojis(emojiPassword[i], 4);
-        emojiOptions.push(randomEmojis);
+        console.log(`[Rooms] Generated random emojis for row ${i}:`, randomEmojis);
+        emojiOptions[i].push(...randomEmojis);
         // Shuffle the order of the emojis
-        for (let i = emojiOptions.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [emojiOptions[i], emojiOptions[j]] = [emojiOptions[j], emojiOptions[i]];
+        for (let j = emojiOptions[i].length - 1; j > 0; j--) {
+            const k = Math.floor(Math.random() * (j + 1));
+            [emojiOptions[i][j], emojiOptions[i][k]] = [emojiOptions[i][k], emojiOptions[i][j]];
         }
-
+        console.log(`[Rooms] Final row ${i} after shuffling:`, emojiOptions[i]);
     }
+    console.log(`[Rooms] Final emoji options:`, emojiOptions);
     return emojiOptions;
 }
 
@@ -191,14 +194,18 @@ export function generateEmojiOptions(emojiPassword: string[]) {
 // Password Emoji is pre added in the emojiOptions
 // We need to select count more random emojis from the remaining emojis
 function selectRandomEmojis(passwordEmoji: string, count: number): string[] {
+    console.log(`[Rooms] Selecting ${count} random emojis (excluding ${passwordEmoji})`);
     // Convert emojiData to array if it's not already
     const allEmojis: EmojiData[] = Array.isArray(emojiData) ? emojiData : Object.values(emojiData);
     const availableEmojis = allEmojis.filter((emoji) => emoji.emoji !== passwordEmoji);
+    console.log(`[Rooms] Available emojis count: ${availableEmojis.length}`);
     const shuffled = [...availableEmojis];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    return shuffled.slice(0, count).map((emoji) => emoji.emoji);
+    const selected = shuffled.slice(0, count).map((emoji) => emoji.emoji);
+    console.log(`[Rooms] Selected random emojis:`, selected);
+    return selected;
 }
 

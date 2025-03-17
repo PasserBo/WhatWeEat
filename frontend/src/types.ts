@@ -22,6 +22,7 @@ export interface RoomState {
   ownerAvatar: string;
   maxPlayers: number;
   emojiPassword: string[];
+  emojiOptions: string[][];
   players: string[];
   restaurants: Restaurant[];
   currentRestaurantIndex: number;

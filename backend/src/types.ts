@@ -15,6 +15,8 @@ export interface RoomState {
     players: string[];
     currentRestaurantIndex: number;
     restaurants: Restaurant[];
+    emojiPassword: string[];
+    emojiOptions: string[][];
     submittedVotes: number;
     status: 'waiting' | 'voting' | 'finished';
 }

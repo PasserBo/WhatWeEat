@@ -191,12 +191,14 @@ export function generateEmojiOptions(emojiPassword: string[]) {
 // Password Emoji is pre added in the emojiOptions
 // We need to select count more random emojis from the remaining emojis
 function selectRandomEmojis(passwordEmoji: string, count: number): string[] {
-    const allEmojis = emojiData.filter(emoji => emoji.emoji !== passwordEmoji);
-    const shuffled = [...allEmojis];
+    // Convert emojiData to array if it's not already
+    const allEmojis: EmojiData[] = Array.isArray(emojiData) ? emojiData : Object.values(emojiData);
+    const availableEmojis = allEmojis.filter((emoji) => emoji.emoji !== passwordEmoji);
+    const shuffled = [...availableEmojis];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    return shuffled.slice(0, count).map(emoji => emoji.emoji);
+    return shuffled.slice(0, count).map((emoji) => emoji.emoji);
 }
 

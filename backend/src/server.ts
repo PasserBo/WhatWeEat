@@ -95,6 +95,7 @@ io.on("connection", (socket) => {
             if (restaurant) {
                 io.to(roomId).emit("newRestaurant", restaurant);
                 io.to(roomId).emit("voteUpdate", 0);
+                io.to(roomId).emit("status", "voting");
                 io.to(roomId).emit("results", null); // Clear results
             }
         }

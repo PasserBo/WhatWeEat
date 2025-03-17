@@ -66,6 +66,7 @@ const startVoting = () => {
 const handleVote = () => {
     if (currentRestaurant) {
         socket.emit("vote", roomId, currentRestaurant.id, score);
+        setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
         setVoteSubmitted(true);
     }
   };
@@ -73,6 +74,9 @@ const handleVote = () => {
 const handleRestart = () => {
     if(results){
         socket.emit("restart", roomId);
+        setResults(null);
+        setVoteCount(0);
+        setVoteSubmitted(false);
     }
   };
 
@@ -133,7 +137,7 @@ const handleRestart = () => {
         <div className="space-y-8">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-semibold">Results</h2>
-            <Button onClick={handleRestart}>Start New Vote</Button>
+            <Button onClick={handleRestart}>我不服！ 再来一轮!</Button>
           </div>
           <div className="grid gap-6">
             {results.map((restaurant) => (

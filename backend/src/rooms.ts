@@ -39,7 +39,8 @@ const selectRandomRestaurants = (restaurantData: Restaurant[], count: number): R
  * 创建新房间
  */
 export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[]) => {
-    rooms[roomId] = {
+    const emojiPassword = generateEmojiPassword();
+    const room: Room = {
         roomId,
         players: [owner],
         maxPlayers,
@@ -49,12 +50,10 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
         restaurants: selectRandomRestaurants(restaurantData, 10), // Randomly select 10 restaurants
         status: "waiting",
         currentVotes: new Map(),
-        emojiPassword: (() => {
-            const password = generateEmojiPassword();
-            return password;
-        })(),
-        emojiOptions: generateEmojiOptions(rooms[roomId].emojiPassword),
+        emojiPassword,
+        emojiOptions: generateEmojiOptions(emojiPassword),
     };
+    rooms[roomId] = room;
 };
 
 export const restartRoom = (roomId: string) => {

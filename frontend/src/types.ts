@@ -29,7 +29,12 @@ export interface RoomState {
   submittedVotes: number;
 } 
 
-export interface EmojiOption {
+export interface EmojiOptions {
+  currentStrp: number;
+  options:[][];
+}
+
+export interface EmojiData {
   emoji: string;
   label: string;
 }

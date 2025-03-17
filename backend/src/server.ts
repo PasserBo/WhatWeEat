@@ -20,8 +20,8 @@ app.use(cors());
 io.on("connection", (socket) => {
     console.log("用户连接");
 
-    socket.on("createRoom",({roomId, maxPlayers}) => {
-        createRoom(roomId, maxPlayers, socket.id, restaurants);
+    socket.on("createRoom",({roomId, maxPlayers, emojiPassword}) => {
+        createRoom(roomId, maxPlayers, socket.id, restaurants, emojiPassword);
         socket.join(roomId);
         const room = getRoomState(roomId);
         io.to(roomId).emit("roomUpdate", room);
@@ -42,6 +42,13 @@ io.on("connection", (socket) => {
     socket.on("getAvailableRooms", () => {
         const availableRooms = Object.values(rooms).filter(room => room.status === "waiting");
         socket.emit("availableRooms", availableRooms);
+    });
+
+    socket.on("getEmojiOptions", (roomId) => {
+        const room = rooms[roomId];
+        if (room) {
+            socket.emit("emojiOptions", room.emojiOptions);
+        }
     });
 
     socket.on("startVoting",(roomId) => {

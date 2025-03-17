@@ -1,4 +1,5 @@
-import { Restaurant } from "./types";
+import { Restaurant,EmojiData } from "./types";
+import { emojiData } from "./data";
 
 interface Room {
     roomId: string;
@@ -10,6 +11,8 @@ interface Room {
     restaurants: Restaurant[];
     status: 'waiting' | 'voting' | 'finished';
     currentVotes: Map<string, number>;
+    emojiPassword: string[];
+    emojiOptions: string[][];
 }
 
 const rooms: Record<string, Room> = {};
@@ -35,7 +38,7 @@ const selectRandomRestaurants = (restaurantData: Restaurant[], count: number): R
 /**
  * 创建新房间
  */
-export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[]) => {
+export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[], emojiPassword: string[]) => {
     rooms[roomId] = {
         roomId,
         players: [owner],
@@ -46,6 +49,8 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
         restaurants: selectRandomRestaurants(restaurantData, 10), // Randomly select 10 restaurants
         status: "waiting",
         currentVotes: new Map(),
+        emojiPassword: [],
+        emojiOptions: generateEmojiOptions(emojiPassword),
     };
 };
 
@@ -162,3 +167,36 @@ export function getVoteCount(roomId: string) {
     if (!room) return 0;
     return room.currentVotes.size;
 }
+// generate 3*5 emoji options, with 3 password emojis in each row
+export function generateEmojiOptions(emojiPassword: string[]) {
+    // emojiOptions is a 3*5 array
+    const emojiOptions: string[][] = [[],[],[]];
+    for (let i = 0; i < 3; i++) {
+        // push password emoji based on the index
+        emojiOptions[i].push(emojiPassword[i]);
+        // push 4 random emojis without repetition
+        const randomEmojis = selectRandomEmojis(emojiPassword[i], 4);
+        emojiOptions.push(randomEmojis);
+        // Shuffle the order of the emojis
+        for (let i = emojiOptions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [emojiOptions[i], emojiOptions[j]] = [emojiOptions[j], emojiOptions[i]];
+        }
+
+    }
+    return emojiOptions;
+}
+
+// select random emojis from EmojiData without repetition
+// Password Emoji is pre added in the emojiOptions
+// We need to select count more random emojis from the remaining emojis
+function selectRandomEmojis(passwordEmoji: string, count: number): string[] {
+    const allEmojis = emojiData.filter(emoji => emoji.emoji !== passwordEmoji);
+    const shuffled = [...allEmojis];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled.slice(0, count).map(emoji => emoji.emoji);
+}
+

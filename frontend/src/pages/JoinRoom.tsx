@@ -10,14 +10,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RoomCard } from "@/components/RoomCard";
-import { RoomState } from "@/types";
+import { RoomState, EmojiOptions } from "@/types";
 import socket from "@/lib/socket";
 
 export default function JoinRoom() {
   const navigate = useNavigate();
   const [rooms, setRooms] = useState<RoomState[]>([]);
   const [selectedRoomId, setSelectedRoomId] = useState<string | null>(null);
+  const [currentPosition, setCurrentPosition] = useState(0);
   const [selectedEmojis, setSelectedEmojis] = useState<string[]>([]);
+  const [emojiOptions, setEmojiOptions] = useState<string[][]>([]);
+  const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
     // Request available rooms when component mounts
@@ -28,33 +31,47 @@ export default function JoinRoom() {
       setRooms(availableRooms);
     });
 
+    socket.on("emojiOptions", (options: string[][]) => {
+      // Set received emoji options
+      setEmojiOptions(options);
+      // Set current step to 0
+      setCurrentStep(0);
+      // Set selected emojis to empty array
+      setSelectedEmojis([]);
+    });
+
     return () => {
       socket.off("availableRooms");
+      socket.off("emojiOptions");
     };
   }, []);
 
   const handleEmojiSelect = (emoji: string) => {
-    if (selectedEmojis.length < 3) {
-      setSelectedEmojis([...selectedEmojis, emoji]);
+    // update the selectedEmojis array, selectedEmojis can be repeated
+    const newSelectedEmojis = [...selectedEmojis, emoji];
+    setSelectedEmojis(newSelectedEmojis);
+    setCurrentStep(currentStep + 1);
+    
+    // Attempt to join the room when the selectedEmojis array is full
+    if (newSelectedEmojis.length === 3) {
+      socket.emit("joinRoomWithPassword", {
+        roomId: selectedRoomId,
+        password: newSelectedEmojis
+      });
     }
+    
   };
 
   const handleClear = () => {
     setSelectedEmojis([]);
+    setCurrentStep(0);
   };
 
   const handleJoinRoom = (roomId: string) => {
     setSelectedRoomId(roomId);
+    socket.emit("getEmojiOptions", {roomId: roomId});
   };
 
-  const handleSubmitPassword = () => {
-    if (selectedEmojis.length === 3 && selectedRoomId) {
-      socket.emit("joinRoomWithPassword", {
-        roomId: selectedRoomId,
-        password: selectedEmojis
-      });
-    }
-  };
 
   if (selectedRoomId) {
     return (
@@ -63,47 +80,44 @@ export default function JoinRoom() {
           <CardHeader>
             <CardTitle>Enter Room Password</CardTitle>
             <CardDescription>
-              Enter the emoji password to join Room {selectedRoomId}
+              Enter the emoji password No.{currentStep + 1} for Room: {selectedRoomId}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
+              {/* show the selected emojis */}
               <div className="flex justify-center gap-2">
                 {selectedEmojis.map((emoji, index) => (
                   <div key={index} className="w-12 h-12 border rounded flex items-center justify-center text-2xl">
                     {emoji}
                   </div>
                 ))}
+                {/* show the empty emojis */}
                 {Array(3 - selectedEmojis.length).fill("").map((_, index) => (
                   <div key={`empty-${index}`} className="w-12 h-12 border rounded flex items-center justify-center">
                     ⬜
                   </div>
                 ))}
               </div>
-
-              <div className="grid grid-cols-5 gap-2">
-                {FOOD_EMOJIS.map((emojiOption) => (
-                  <button
-                    key={emojiOption.emoji}
-                    onClick={() => handleEmojiSelect(emojiOption.emoji)}
-                    className="w-12 h-12 border rounded hover:bg-gray-100 text-2xl"
-                    aria-label={emojiOption.label}
-                  >
-                    {emojiOption.emoji}
-                  </button>
-                ))}
-              </div>
+              {/* show the emoji options */}
+              {emojiOptions.length > 0 && currentStep < 3 && (
+                <div className="grid grid-cols-5 gap-2">
+                  {/* show the emoji options based on the current step */}
+                  {emojiOptions[currentStep].map((emoji, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleEmojiSelect(emoji)}
+                      className="w-12 h-12 border rounded hover:bg-gray-100 text-2xl"
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               <div className="flex gap-2">
                 <Button onClick={handleClear} variant="outline" className="flex-1">
                   Clear
-                </Button>
-                <Button 
-                  onClick={handleSubmitPassword}
-                  disabled={selectedEmojis.length !== 3}
-                  className="flex-1"
-                >
-                  Join Room
                 </Button>
               </div>
             </div>

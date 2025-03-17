@@ -1,7 +1,7 @@
-import { EmojiOption } from "@/types";
+import { EmojiData } from "@/types";
 
 // Predefined food emojis with labels for accessibility
-export const FOOD_EMOJIS: EmojiOption[] = [
+export const FOOD_EMOJIS: EmojiData[] = [
   { emoji: "🍕", label: "pizza" },
   { emoji: "🍔", label: "hamburger" },
   { emoji: "🍜", label: "noodles" },

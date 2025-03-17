@@ -19,6 +19,12 @@ export interface RoomState {
     status: 'waiting' | 'voting' | 'finished';
 }
 
+export interface EmojiData {
+    emoji: string;
+    label: string;
+}
+
+
 export type VoteResult = Record<string, number[]>;
 
 export interface Vote {

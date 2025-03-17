@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "./components/ui/button";
-import { RestaurantCard } from "./components/RestaurantCard";
-import { RoomState, Restaurant, VoteResult } from "./types";
+import { Button } from "@/components/ui/button";
+import { RestaurantCard } from "@/components/RestaurantCard";
+import { RoomState, Restaurant, VoteResult } from "@/types";
 import socket from "@/lib/socket";
 
 const Room: React.FC = () => {

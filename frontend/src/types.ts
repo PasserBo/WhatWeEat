@@ -19,13 +19,20 @@ export interface Vote {
 export interface RoomState {
   roomId: string;
   owner: string;
+  ownerAvatar: string;
   maxPlayers: number;
+  emojiPassword: string[];
   players: string[];
   restaurants: Restaurant[];
   currentRestaurantIndex: number;
   status: "waiting" | "voting" | "finished";
   submittedVotes: number;
 } 
+
+export interface EmojiOption {
+  emoji: string;
+  label: string;
+}
 
 // Interface to store the final results of the voting process
 export type VoteResult = (Restaurant & { averageScore: number })[];

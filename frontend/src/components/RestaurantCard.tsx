@@ -55,7 +55,7 @@ export function RestaurantCard({
         <div className="grid gap-4">
           <div className="flex items-center gap-4">
             <a
-              href={restaurant.url}
+              href={restaurant.yelp_url}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"

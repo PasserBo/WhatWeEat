@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Room from "./Room";
+import Home from "./pages/Home";
+import Room from "./pages/Room";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Button } from '@/components/ui/button'
 import './App.css'
-
+import JoinRoom from "@/pages/JoinRoom";
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/room/:roomId" element={<Room />} />
+        <Route path="/join" element={<JoinRoom />} />
       </Routes>
     </Router>
   );

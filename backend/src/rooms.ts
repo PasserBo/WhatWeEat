@@ -144,16 +144,6 @@ export const getResults = (roomId: string) => {
     }).sort((a, b) => Number(b.averageScore) - Number(a.averageScore));
 };
 
-/**
- * 重置房间（可选）
- */
-export const resetRoom = (roomId: string) => {
-    if (rooms[roomId]) {
-        rooms[roomId].currentRestaurantIndex = 0;
-        rooms[roomId].votes = {};
-    }
-};
-
 export function getRoomState(roomId: string) {
     const room = rooms[roomId];
     if (!room) return null;

@@ -34,6 +34,11 @@ const Room: React.FC = () => {
         setRoomState(prevState => prevState ? { ...prevState, submittedVotes: votes } : null);
     });
 
+    socket.on("status", (status: string) => {
+        console.log("Received status:", status);
+        setRoomState(prevState => prevState ? { ...prevState, status: status as "waiting" | "voting" | "finished" } : null);
+    });
+
     socket.on("results", (finalResults: VoteResult) => {
             console.log("Final results:", finalResults);
             setResults(finalResults);

@@ -57,6 +57,34 @@ io.on("connection", (socket) => {
         }
     });
 
+    socket.on("joinRoomWithPassword", ({roomId, password}) => {
+        console.log(`[Server] Attempting to join room ${roomId} with password`);
+        const room = rooms[roomId];
+        if (!room) {
+            console.log(`[Server] Room ${roomId} not found`);
+            socket.emit("joinRoomResult", { success: false, message: "Room not found" });
+            return;
+        }
+
+        // Check if the password matches
+        const passwordMatches = room.emojiPassword.every((emoji, index) => emoji === password[index]);
+        
+        if (passwordMatches) {
+            console.log(`[Server] Password correct, joining room`);
+            if (joinRoom(roomId, socket.id)) {
+                socket.join(roomId);
+                const roomState = getRoomState(roomId);
+                io.to(roomId).emit("roomUpdate", roomState);
+                socket.emit("joinRoomResult", { success: true });
+            } else {
+                socket.emit("joinRoomResult", { success: false, message: "Room is full" });
+            }
+        } else {
+            console.log(`[Server] Incorrect password`);
+            socket.emit("joinRoomResult", { success: false, message: "Incorrect password" });
+        }
+    });
+
     socket.on("startVoting",(roomId) => {
         console.log(`Starting voting for room ${roomId}`);
         const room = rooms[roomId];

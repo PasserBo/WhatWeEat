@@ -41,6 +41,17 @@ export default function JoinRoom() {
       setSelectedEmojis([]);
     });
 
+    socket.on("joinRoomResult", (result: { success: boolean, message?: string }) => {
+      console.log('Join room result:', result);
+      if (result.success) {
+        navigate(`/room/${selectedRoomId}`);
+      } else {
+        alert(result.message || 'Failed to join room');
+        setSelectedEmojis([]);
+        setCurrentStep(0);
+      }
+    });
+
     return () => {
       socket.off("availableRooms");
       socket.off("emojiOptions");

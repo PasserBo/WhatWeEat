@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { RestaurantCard } from "@/components/RestaurantCard";
 import { RoomState, Restaurant, VoteResult } from "@/types";
 import socket from "@/lib/socket";
+import { Card } from "@/components/ui/card";
+import { useToast } from "@/components/ui/use-toast";
 
 const Room: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
@@ -17,6 +19,7 @@ const Room: React.FC = () => {
   // const [error, setError] = useState<string | null>(null);
   const [voteSubmitted, setVoteSubmitted] = useState(false);
   const [currentRestaurant, setCurrentRestaurant] = useState<Restaurant | null>(null);
+  const { toast } = useToast();
   
   useEffect(() => {
     console.log(`Joining room ${roomId} with ID: ${socket.id}`);
@@ -98,6 +101,80 @@ const handleRestart = () => {
         </div>
         <Button onClick={() => navigate("/")}>Leave Room</Button>
       </div>
+
+      {/* Add new section for room sharing */}
+      <Card className="p-6">
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold">Share Room</h2>
+          
+          {/* Emoji Password Display */}
+          <div className="space-y-2">
+            <p className="text-sm text-muted-foreground">Room Password:</p>
+            <div className="flex items-center gap-4">
+              <div className="flex gap-2">
+                {roomState?.emojiPassword?.map((emoji, index) => (
+                  <div key={index} className="w-12 h-12 border rounded flex items-center justify-center text-2xl">
+                    {emoji}
+                  </div>
+                ))}
+              </div>
+              <Button 
+                variant="outline" 
+                onClick={() => {
+                  navigator.clipboard.writeText(roomState?.emojiPassword?.join('') || '');
+                  toast({
+                    title: "Copied!",
+                    description: "Emoji password has been copied to clipboard",
+                    duration: 2000,
+                  });
+                }}
+              >
+                Copy Emojis
+              </Button>
+            </div>
+          </div>
+
+          {/* Room Link Sharing */}
+          <div className="space-y-2">
+            <p className="text-sm text-muted-foreground">Share Link:</p>
+            <div className="flex items-center gap-4">
+              <div className="flex-1 p-2 bg-muted rounded text-sm">
+                {window.location.origin}/room/{roomId}
+              </div>
+              <Button 
+                variant="outline"
+                onClick={() => {
+                  const shareLink = `${window.location.origin}/room/${roomId}`;
+                  navigator.clipboard.writeText(shareLink);
+                  toast({
+                    title: "Copied!",
+                    description: "Room link has been copied to clipboard",
+                    duration: 2000,
+                  });
+                }}
+              >
+                Copy Link
+              </Button>
+            </div>
+          </div>
+
+          {/* Share button for mobile */}
+          {navigator.share && (
+            <Button 
+              className="w-full"
+              onClick={() => {
+                const shareText = `Join my room in Restaurant Voting!\n\nRoom ID: ${roomId}\nPassword: ${roomState?.emojiPassword?.join(' ')}\n\n${window.location.origin}/join/${roomId}`;
+                navigator.share({
+                  title: 'Join My Restaurant Voting Room',
+                  text: shareText,
+                });
+              }}
+            >
+              Share Room
+            </Button>
+          )}
+        </div>
+      </Card>
 
       {roomState?.status === "waiting" && (
         <div className="flex flex-col items-center justify-center gap-4">

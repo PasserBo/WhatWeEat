@@ -66,21 +66,30 @@ io.on("connection", (socket) => {
             return;
         }
 
+        // Check if player is already in the room
+        if (room.players.includes(socket.id)) {
+            console.log(`[Server] Player ${socket.id} is already in room ${roomId}`);
+            socket.emit("joinRoomResult", { success: true });
+            return;
+        }
+
         // Check if the password matches
         const passwordMatches = room.emojiPassword.every((emoji, index) => emoji === password[index]);
         
         if (passwordMatches) {
-            console.log(`[Server] Password correct, joining room`);
+            console.log(`[Server] Password correct for room ${roomId}, attempting to join`);
             if (joinRoom(roomId, socket.id)) {
+                console.log(`[Server] Successfully joined room ${roomId}`);
                 socket.join(roomId);
                 const roomState = getRoomState(roomId);
                 io.to(roomId).emit("roomUpdate", roomState);
                 socket.emit("joinRoomResult", { success: true });
             } else {
+                console.log(`[Server] Failed to join room ${roomId} - room might be full`);
                 socket.emit("joinRoomResult", { success: false, message: "Room is full" });
             }
         } else {
-            console.log(`[Server] Incorrect password`);
+            console.log(`[Server] Incorrect password for room ${roomId}`);
             socket.emit("joinRoomResult", { success: false, message: "Incorrect password" });
         }
     });

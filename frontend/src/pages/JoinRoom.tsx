@@ -44,6 +44,7 @@ export default function JoinRoom() {
     socket.on("joinRoomResult", (result: { success: boolean, message?: string }) => {
       console.log('Join room result:', result);
       if (result.success) {
+        console.log('Navigating to room:', selectedRoomId);
         navigate(`/room/${selectedRoomId}`);
       } else {
         alert(result.message || 'Failed to join room');
@@ -55,8 +56,9 @@ export default function JoinRoom() {
     return () => {
       socket.off("availableRooms");
       socket.off("emojiOptions");
+      socket.off("joinRoomResult");
     };
-  }, []);
+  }, [navigate, selectedRoomId]);
 
   const handleEmojiSelect = (emoji: string) => {
     // update the selectedEmojis array, selectedEmojis can be repeated

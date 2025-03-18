@@ -71,7 +71,9 @@ export default function JoinRoom() {
   const handleJoinRoom = (roomId: string) => {
     console.log('handleJoinRoom called with roomId:', roomId);
     setSelectedRoomId(roomId);
+    console.log('Emitting getEmojiOptions event for room:', roomId);
     socket.emit("getEmojiOptions", {roomId: roomId});
+    console.log('getEmojiOptions event emitted');
   };
 
 

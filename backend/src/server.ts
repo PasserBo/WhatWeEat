@@ -44,13 +44,16 @@ io.on("connection", (socket) => {
         socket.emit("availableRooms", availableRooms);
     });
 
-    socket.on("getEmojiOptions", (roomId) => {
+    socket.on("getEmojiOptions", ({roomId}) => {
         console.log(`[Server] Getting emoji options for room ${roomId}`);
         const room = rooms[roomId];
         if (room) {
             console.log(`[Server] Room found, emoji options:`, room.emojiOptions);
-            console.log(`[Server] Room password:`, room.emojiPassword);
+            console.log(`[Server] Emitting emojiOptions event with data:`, room.emojiOptions);
             socket.emit("emojiOptions", room.emojiOptions);
+            console.log(`[Server] Emoji options emitted`);
+        } else {
+            console.log(`[Server] Room ${roomId} not found`);
         }
     });
 

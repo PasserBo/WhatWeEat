@@ -160,7 +160,9 @@ export function getRoomState(roomId: string) {
         players: room.players,
         status: room.status,
         currentRestaurantIndex: room.currentRestaurantIndex,
-        restaurants: room.restaurants
+        restaurants: room.restaurants,
+        emojiOptions: room.emojiOptions,
+        emojiPassword: room.emojiPassword
     };
 }
 

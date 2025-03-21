@@ -164,7 +164,10 @@ export function getRoomState(roomId: string) {
         currentRestaurantIndex: room.currentRestaurantIndex,
         restaurants: room.restaurants,
         emojiOptions: room.emojiOptions,
-        emojiPassword: room.emojiPassword
+        emojiPassword: room.emojiPassword,
+        votingType: room.votingType,
+        maxPlayers: room.maxPlayers,
+        submittedVotes: room.currentVotes.size
     };
 }
 

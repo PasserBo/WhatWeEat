@@ -18,8 +18,6 @@ const Room: React.FC = () => {
   const [isOwner, setIsOwner] = useState(false);
   const [voteCount, setVoteCount] = useState(0);
   const [score, setScore] = useState(5);
-  const [votingType, setVotingType] = useState("ScoreButton");
-  // const [error, setError] = useState<string | null>(null);
   const [voteSubmitted, setVoteSubmitted] = useState(false);
   const [currentRestaurant, setCurrentRestaurant] = useState<Restaurant | null>(null);
   const { toast } = useToast();
@@ -95,7 +93,9 @@ const handleRestart = () => {
   };
 
 const renderVotingComponent = () => {
-    if (roomState?.votingType === "score") {
+    if (!roomState?.votingType) return null;
+    
+    if (roomState.votingType === "score") {
       return (
         <ScoreVoting
           onVote={handleVoteSubmit}

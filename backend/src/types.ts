@@ -19,6 +19,7 @@ export interface RoomState {
     emojiOptions: string[][];
     submittedVotes: number;
     status: 'waiting' | 'voting' | 'finished';
+    votingType: 'score' | 'binary';
 }
 
 export interface EmojiData {

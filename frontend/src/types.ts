@@ -28,6 +28,7 @@ export interface RoomState {
   currentRestaurantIndex: number;
   status: "waiting" | "voting" | "finished";
   submittedVotes: number;
+  votingType: "score" | "binary";
 } 
 
 // Interface to store the final results of the voting process

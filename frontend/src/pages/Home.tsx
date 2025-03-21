@@ -24,6 +24,8 @@ export default function Home() {
   // const [roomId, setRoomId] = useState("");
   const [maxPlayers, setMaxPlayers] = useState("4");
   const [createdRoomId, setCreatedRoomId] = useState("");
+  const [votingType, setVotingType] = useState("score");
+  const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
   // const { toast } = useToast();
   
   const createRoom = () => {
@@ -33,6 +35,7 @@ export default function Home() {
     socket.emit("createRoom", { 
       roomId: newRoomId, 
       maxPlayers, 
+      votingType,
       // ownerAvatar: avatar
     });
     setCreatedRoomId(newRoomId);
@@ -64,7 +67,7 @@ export default function Home() {
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t" />
               </div>
-              {/* Create a new room */}
+              {/* 创建房间，选择人数 */}
               <div className="relative flex justify-center text-xs uppercase">
                 <span className="bg-background px-2 text-muted-foreground">
                   Create a new room
@@ -82,6 +85,30 @@ export default function Home() {
                 onChange={(e) => setMaxPlayers(e.target.value)}
               />
             </div>
+            {/* 投票类型 */}
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
+              className="w-full">
+              {showAdvancedOptions ? "Hide Advanced Options" : "Show Advanced Options"}
+            </Button>
+            {/* 高级选项 */}
+            {showAdvancedOptions && (
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="votingType">Voting Type</Label>
+                <select
+                  id="votingType"
+                  value={votingType}
+                  onChange={(e) => setVotingType(e.target.value)}
+                  className="w-full p-2 border rounded-md bg-background"
+                >
+                  <option value="score">Score (1-10)</option>
+                  <option value="binary">Like/Dislike</option>
+                </select>
+              </div>
+            )}
+
+            {/* 创建房间 */}
             <Button onClick={createRoom} className="w-full">
               Create Room
             </Button>

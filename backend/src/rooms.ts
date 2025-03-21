@@ -13,6 +13,7 @@ interface Room {
     currentVotes: Map<string, number>;
     emojiPassword: string[];
     emojiOptions: string[][];
+    votingType: "score" | "binary";
 }
 
 const rooms: Record<string, Room> = {};
@@ -38,7 +39,7 @@ const selectRandomRestaurants = (restaurantData: Restaurant[], count: number): R
 /**
  * 创建新房间
  */
-export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[]) => {
+export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[], votingType: "score" | "binary") => {
     const emojiPassword = generateEmojiPassword();
     const room: Room = {
         roomId,
@@ -52,6 +53,7 @@ export const createRoom = (roomId: string, maxPlayers: number, owner: string, re
         currentVotes: new Map(),
         emojiPassword,
         emojiOptions: generateEmojiOptions(emojiPassword),
+        votingType
     };
     rooms[roomId] = room;
 };

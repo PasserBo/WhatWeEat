@@ -5,19 +5,17 @@ import { ThumbsDown, ThumbsUp, ExternalLink } from "lucide-react";
 
 interface RestaurantCardProps {
   restaurant: Restaurant;
-  onVote?: (vote: boolean) => void;
-  score?: number;
-  isVoted?: boolean;
   showVoting?: boolean;
+  score?: number;
+  VotingComponent?: React.ReactNode;
 }
 
-export function RestaurantCard({
+export const RestaurantCard: React.FC<RestaurantCardProps> = ({
   restaurant,
-  onVote,
-  score,
-  isVoted,
   showVoting = true,
-}: RestaurantCardProps) {
+  score,
+  VotingComponent
+}) => {
   return (
     <Card className="w-full max-w-2xl">
       <CardHeader className="flex flex-row gap-4">
@@ -64,27 +62,10 @@ export function RestaurantCard({
               View on Yelp
             </a>
           </div>
-          {showVoting && onVote && (
-            <div className="flex items-center justify-center gap-4 mt-4">
-              <Button
-                variant={isVoted === false ? "destructive" : "outline"}
-                size="lg"
-                onClick={() => onVote(false)}
-                disabled={isVoted}
-              >
-                <ThumbsDown className="w-5 h-5" />
-              </Button>
-              {score !== undefined && (
-                <div className="text-2xl font-bold">{score}</div>
-              )}
-              <Button
-                variant={isVoted === true ? "default" : "outline"}
-                size="lg"
-                onClick={() => onVote(true)}
-                disabled={isVoted}
-              >
-                <ThumbsUp className="w-5 h-5" />
-              </Button>
+          {showVoting && VotingComponent}
+          {!showVoting && score && (
+            <div className="mt-4">
+              <p>Final Score: {score}</p>
             </div>
           )}
         </div>

@@ -6,6 +6,8 @@ import { RoomState, Restaurant, VoteResult } from "@/types";
 import socket from "@/lib/socket";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
+import { ScoreVoting } from "@/components/VotingButtons/ScoreVoting";
+import { BinaryVoting } from "@/components/VotingButtons/BinaryVoting";
 
 const Room: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
@@ -16,6 +18,7 @@ const Room: React.FC = () => {
   const [isOwner, setIsOwner] = useState(false);
   const [voteCount, setVoteCount] = useState(0);
   const [score, setScore] = useState(5);
+  const [votingType, setVotingType] = useState("ScoreButton");
   // const [error, setError] = useState<string | null>(null);
   const [voteSubmitted, setVoteSubmitted] = useState(false);
   const [currentRestaurant, setCurrentRestaurant] = useState<Restaurant | null>(null);
@@ -71,11 +74,14 @@ const startVoting = () => {
     socket.emit("startVoting", roomId);
     };
 
-const handleVote = () => {
+const handleVoteSubmit = (newScore: number) => {
+    setScore(newScore);
     if (currentRestaurant) {
-        socket.emit("vote", roomId, currentRestaurant.id, score);
-        setRoomState(prevState => prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null);
-        setVoteSubmitted(true);
+      socket.emit("vote", roomId, currentRestaurant.id, newScore);
+      setRoomState(prevState => 
+        prevState ? { ...prevState, submittedVotes: prevState.submittedVotes + 1 } : null
+      );
+      setVoteSubmitted(true);
     }
   };
 
@@ -88,7 +94,23 @@ const handleRestart = () => {
     }
   };
 
-
+const renderVotingComponent = () => {
+    if (roomState?.votingType === "score") {
+      return (
+        <ScoreVoting
+          onVote={handleVoteSubmit}
+          disabled={voteSubmitted}
+          currentScore={score}
+        />
+      );
+    }
+    return (
+      <BinaryVoting
+        onVote={handleVoteSubmit}
+        disabled={voteSubmitted}
+      />
+    );
+  };
 
   return (
     <div className="container py-8 space-y-8">
@@ -206,8 +228,8 @@ const handleRestart = () => {
         <div className="flex flex-col items-center gap-4">
           <RestaurantCard
             restaurant={currentRestaurant}
-            onVote={handleVote}
-            isVoted={voteSubmitted}
+            showVoting={true}
+            VotingComponent={renderVotingComponent()}
           />
           <p className="text-sm text-muted-foreground">
             Votes: {roomState?.submittedVotes} / {roomState?.players.length}

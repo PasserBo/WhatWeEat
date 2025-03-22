@@ -63,11 +63,7 @@ export const RestaurantCard: React.FC<RestaurantCardProps> = ({
             </a>
           </div>
           {showVoting && VotingComponent}
-          {!showVoting && score && (
-            <div className="mt-4">
-              <p>Final Score: {score}</p>
-            </div>
-          )}
+
         </div>
       </CardContent>
     </Card>

@@ -20,8 +20,8 @@ app.use(cors());
 io.on("connection", (socket) => {
     console.log("用户连接");
 
-    socket.on("createRoom",({roomId, maxPlayers,votingType}) => {
-        createRoom(roomId, maxPlayers, socket.id, restaurants, votingType);
+    socket.on("createRoom",({roomId, maxPlayers, votingType, ownerAvatar, roomName}) => {
+        createRoom(roomId, maxPlayers, socket.id, restaurants, votingType, ownerAvatar, roomName);
         socket.join(roomId);
         const room = getRoomState(roomId);
         io.to(roomId).emit("roomUpdate", room);

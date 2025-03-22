@@ -6,6 +6,8 @@ interface Room {
     players: string[];
     maxPlayers: number;
     owner: string;
+    ownerAvatar: string;
+    roomName: string;
     currentRestaurantIndex: number;
     votes: Record<string, number[]>; // 记录每家餐厅的分数
     restaurants: Restaurant[];
@@ -39,13 +41,15 @@ const selectRandomRestaurants = (restaurantData: Restaurant[], count: number): R
 /**
  * 创建新房间
  */
-export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[], votingType: "score" | "binary") => {
+export const createRoom = (roomId: string, maxPlayers: number, owner: string, restaurantData: Restaurant[], votingType: "score" | "binary", ownerAvatar: string, roomName: string) => {
     const emojiPassword = generateEmojiPassword();
     const room: Room = {
         roomId,
         players: [owner],
         maxPlayers,
         owner,
+        ownerAvatar,
+        roomName,
         currentRestaurantIndex: 0,
         votes: {},
         restaurants: selectRandomRestaurants(restaurantData, 10), // Randomly select 10 restaurants

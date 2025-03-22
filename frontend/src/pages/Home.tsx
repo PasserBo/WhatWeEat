@@ -13,6 +13,8 @@ import {
 //import { createRoom, joinRoom, onRoomUpdate, cleanup } from "@/lib/socket";
 import { RoomState } from "../types";
 import socket from "@/lib/socket";
+import { generateAvatar } from "@/utils/emoji";
+import { generateRoomName } from "@/utils/room";
 
 function generateRoomId() { 
   // 生成一个6位随机字符串
@@ -30,13 +32,15 @@ export default function Home() {
   
   const createRoom = () => {
     const newRoomId = generateRoomId();
-    // const avatar = generateAvatar();
+    const avatar = generateAvatar();
+    const roomName = generateRoomName();
     console.log("Creating room with ID:", socket.id);
     socket.emit("createRoom", { 
       roomId: newRoomId, 
       maxPlayers, 
       votingType,
-      // ownerAvatar: avatar
+      ownerAvatar: avatar,
+      roomName
     });
     setCreatedRoomId(newRoomId);
     navigate(`/room/${newRoomId}`);
